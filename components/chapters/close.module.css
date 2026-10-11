@@ -1,0 +1,58 @@
+.close {
+  padding: clamp(72px, 9vw, 144px) 0;
+  background: var(--f-moss);
+  color: var(--on-moss);
+  --on: var(--on-moss);
+  --on-muted: color-mix(in srgb, var(--on-moss) 80%, var(--f-moss));
+  --mark: var(--mark-moss);
+  --rule-on: color-mix(in srgb, var(--on-moss) 30%, transparent);
+  --rule: color-mix(in srgb, var(--on-moss) 24%, transparent);
+  --muted: var(--on-muted);
+  scroll-margin-top: 64px;
+}
+
+.grid {
+  display: grid;
+  gap: 48px;
+  margin-top: 40px;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 64px;
+    margin-left: 212px;
+  }
+}
+
+.lede {
+  max-width: 34ch;
+  margin: 0 0 28px;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.5;
+}
+
+.table {
+  margin-top: 36px;
+}
+
+.firstTitle {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.1vw, 32px);
+  line-height: 1.1;
+}
+
+/* In dark mode the field is dyed night, so the paper button would sink;
+   the bright moss carries it instead. */
+:global(:root[data-theme="dark"]) .close :global(a[data-download]) {
+  --btn-bg: var(--moss);
+  --btn-fg: #101208 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme="light"])) .close :global(a[data-download]) {
+    --btn-bg: var(--moss);
+    --btn-fg: #101208 !important;
+  }
+}

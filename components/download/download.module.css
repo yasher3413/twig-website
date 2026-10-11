@@ -1,0 +1,162 @@
+.first {
+  display: grid;
+  gap: 24px;
+}
+
+.steps {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+@media (min-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.step {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  counter-increment: step;
+}
+
+.illo {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--on, var(--ink)) 8%, transparent);
+}
+
+.illo svg {
+  width: 100%;
+  height: auto;
+}
+
+.illo figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 11px;
+  color: var(--on-muted, var(--muted));
+}
+
+.dialog {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+}
+
+.sidebar {
+  fill: color-mix(in srgb, var(--strip) 70%, var(--surface));
+}
+
+.sideHi {
+  fill: color-mix(in srgb, #2b6ef0 22%, var(--surface));
+}
+
+.iconTile {
+  fill: #efe8d8;
+  stroke: #d8cfbb;
+}
+
+.iconLeaf {
+  fill: #6f9a55;
+  stroke: #3f5b30;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.line {
+  fill: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+.lineSoft {
+  fill: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.btn {
+  fill: color-mix(in srgb, var(--ink) 8%, var(--surface));
+  stroke: var(--border-strong);
+}
+
+.btnHi {
+  fill: #2b6ef0;
+  stroke: #2b6ef0;
+}
+
+.btnText {
+  font-family: -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #fff;
+}
+
+.stepTitle {
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.stepTitle::before {
+  content: counter(step) ".  ";
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--mark, var(--moss));
+}
+
+.stepBody {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--on-muted, var(--muted));
+}
+
+.terminal {
+  display: grid;
+  gap: 8px;
+}
+
+.command {
+  display: flex;
+  align-items: stretch;
+  max-width: 640px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--on, var(--ink)) 25%, transparent);
+  background: color-mix(in srgb, var(--forest) 92%, transparent);
+}
+
+.code {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13.5px;
+  color: #e9e7dd;
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 0;
+  border-left: 1px solid rgba(233, 231, 221, 0.18);
+  background: rgba(233, 231, 221, 0.08);
+  color: #e9e7dd;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 560;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: rgba(233, 231, 221, 0.16);
+}

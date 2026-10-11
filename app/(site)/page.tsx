@@ -7,7 +7,12 @@ import { ChangesChapter } from "@/components/chapters/ChangesChapter";
 import { SnoozeChapter } from "@/components/chapters/SnoozeChapter";
 import { CheckpointsChapter } from "@/components/chapters/CheckpointsChapter";
 import { PackagesChapter } from "@/components/chapters/PackagesChapter";
-import { getLatest } from "@/lib/github";
+import { PaletteChapter } from "@/components/chapters/PaletteChapter";
+import { KeyboardChapter } from "@/components/chapters/KeyboardChapter";
+import { NightChapters } from "@/components/chapters/NightChapters";
+import { OpenSourceChapter } from "@/components/chapters/OpenSourceChapter";
+import { CloseChapter } from "@/components/chapters/CloseChapter";
+import { getReleases, getRepo } from "@/lib/github";
 import { pageMeta, baseUrl } from "@/lib/seo";
 import { DOWNLOAD_URL, REPO_URL } from "@/lib/links";
 
@@ -18,7 +23,8 @@ export const metadata: Metadata = pageMeta({
 });
 
 export default async function Home() {
-  const latest = await getLatest();
+  const [releases, repo] = await Promise.all([getReleases(), getRepo()]);
+  const latest = releases[0];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -45,6 +51,11 @@ export default async function Home() {
         <SnoozeChapter />
         <CheckpointsChapter />
         <PackagesChapter />
+        <PaletteChapter />
+        <KeyboardChapter />
+        <NightChapters latest={latest} />
+        <OpenSourceChapter latest={latest} firstDate={releases[releases.length - 1].date} releaseCount={releases.length} stars={repo.stars} />
+        <CloseChapter latest={latest} />
       </BranchProvider>
     </main>
   );

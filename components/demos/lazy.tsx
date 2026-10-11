@@ -48,3 +48,17 @@ export const LazyPackages = () => (
     <PackagesDemo />
   </Near>
 );
+
+const AppPaletteDemo = dynamic(() => import("./palette/AppPaletteDemo").then((m) => m.AppPaletteDemo), { ssr: false });
+const KeyboardDemo = dynamic(() => import("./keyboard/KeyboardDemo").then((m) => m.KeyboardDemo), { ssr: false });
+
+export const LazyAppPalette = () => (
+  <Near minHeight="520px" label="Command palette demo loading">
+    <AppPaletteDemo />
+  </Near>
+);
+export const LazyKeyboard = () => (
+  <Near minHeight="560px" label="Keyboard demo loading">
+    <KeyboardDemo />
+  </Near>
+);

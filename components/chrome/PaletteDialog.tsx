@@ -79,7 +79,7 @@ export function PaletteDialog({ open, onOpenChange }: { open: boolean; onOpenCha
       <div className="palette">
         <div className="palette-field">
           <Icon name="search" size={17} />
-          <Command.Input className="palette-input" value={query} onValueChange={setQuery} placeholder="Search the site, the docs, or type a command" />
+          <Command.Input className="palette-input" value={query} onValueChange={setQuery} placeholder="Search the site, the docs, or type a command…" name="site-search" autoComplete="off" spellCheck={false} />
         </div>
         <Command.List className="palette-list">
           <Command.Empty className="palette-empty">Nothing here matches. Try a feature name, like “snooze” or “recall”.</Command.Empty>

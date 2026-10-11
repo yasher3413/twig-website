@@ -75,7 +75,7 @@ export function RecallDemo() {
       <div className={styles.filters}>
         <label className={styles.search}>
           <TwigIcon name="search" size={17} />
-          <input aria-label="Search saved page text" value={query} placeholder="Words you remember reading…" onChange={(e) => setQuery(e.target.value)} />
+          <input name="recall-search" autoComplete="off" spellCheck={false} aria-label="Search saved page text" value={query} placeholder="Words you remember reading…" onChange={(e) => setQuery(e.target.value)} />
         </label>
         <div className={styles.filterRow}>
           <label>
@@ -89,11 +89,11 @@ export function RecallDemo() {
           </label>
           <label>
             From
-            <input type="date" aria-label="Captured from" value={from} min="2026-09-01" max="2026-09-30" onChange={(e) => setFrom(e.target.value)} />
+            <input type="date" name="recall-from" aria-label="Captured from" value={from} min="2026-09-01" max="2026-09-30" onChange={(e) => setFrom(e.target.value)} />
           </label>
           <label>
             Through
-            <input type="date" aria-label="Captured through" value={to} min="2026-09-01" max="2026-09-30" onChange={(e) => setTo(e.target.value)} />
+            <input type="date" name="recall-through" aria-label="Captured through" value={to} min="2026-09-01" max="2026-09-30" onChange={(e) => setTo(e.target.value)} />
           </label>
           <div className={styles.try}>
             {SUGGESTIONS.map((s) => (

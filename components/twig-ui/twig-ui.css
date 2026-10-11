@@ -891,6 +891,10 @@
   color: var(--text-muted);
 }
 
+.twig .palette-field:focus-within {
+  border-bottom-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+}
+
 .twig .palette-input {
   flex: 1;
   min-width: 0;

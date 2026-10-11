@@ -151,6 +151,10 @@
   box-shadow: var(--shadow-pop);
 }
 
+.sheet {
+  overscroll-behavior: contain;
+}
+
 .sheet::backdrop {
   background: rgba(16, 18, 8, 0.32);
 }

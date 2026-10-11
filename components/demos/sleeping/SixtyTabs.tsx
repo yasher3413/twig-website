@@ -28,7 +28,7 @@ export function SixtyTabs() {
 
   const asleep = settled ? TOTAL - AWAKE : 0;
   return (
-    <figure ref={ref} className={styles.sixty} aria-label={`Sixty open tabs; ${settled ? "five awake, fifty-five asleep" : "all awake"}.`}>
+    <figure ref={ref} className={styles.sixty} aria-label={`60 open tabs; ${settled ? "5 awake, 55 asleep" : "all awake"}.`}>
       <div className={styles.wall} aria-hidden="true">
         {Array.from({ length: TOTAL }, (_, i) => {
           const sleeping = settled && i < TOTAL - AWAKE;

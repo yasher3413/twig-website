@@ -1,6 +1,6 @@
 export function formatBytes(n: number): string {
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)} MB`;
-  return `${Math.round(n / 1000)} KB`;
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}\u00a0MB`;
+  return `${Math.round(n / 1000)}\u00a0KB`;
 }
 
 export function formatDate(iso: string): string {

@@ -56,7 +56,7 @@ export function Footer({ version, date }: { version: string; date: string }) {
           <div className={styles.footerSign}>
             <Link href="/" className={styles.footerMark} aria-label="twig, home">
               <TwigMark size={44} />
-              <span aria-hidden="true">twig</span>
+              <span aria-hidden="true" translate="no">twig</span>
             </Link>
             <p className={styles.footerLine}>The browser that remembers. Free, open source, and made for the Mac.</p>
             <a className={styles.footerDownload} href={DOWNLOAD_URL}>

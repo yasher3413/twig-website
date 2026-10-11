@@ -29,7 +29,7 @@ export function Header({ version }: { version: string }) {
       <div className={`wrap ${styles.headerInner}`}>
         <Link href="/" className={styles.wordmark} aria-label="twig, home">
           <TwigMark size={30} />
-          <span aria-hidden="true">twig</span>
+          <span aria-hidden="true" translate="no">twig</span>
         </Link>
         <nav aria-label="Main" className={styles.nav}>
           <ul>

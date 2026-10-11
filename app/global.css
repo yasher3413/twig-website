@@ -148,6 +148,17 @@
     hanging-punctuation: first;
   }
 
+  button,
+  a,
+  summary,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  html {
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--moss) 18%, transparent);
+  }
+
   body {
     margin: 0;
     background-color: var(--paper);
@@ -284,7 +295,7 @@
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
 }
 
 /* Home chapters leave room in the left margin for the branch. */

@@ -52,6 +52,9 @@ export function AppPaletteDemo() {
             <TwigIcon name="search" size={17} />
             <input
               className="palette-input"
+              name="app-palette-demo"
+              autoComplete="off"
+              spellCheck={false}
               aria-label="Try twig's palette: search tabs, pages you've read, or commands"
               placeholder="Search tabs, pages you've read, or type a command"
               value={q}

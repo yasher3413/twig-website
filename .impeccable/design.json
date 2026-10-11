@@ -458,6 +458,16 @@
           "#addb8c",
           "#e2f6d4"
         ]
+      },
+      "forest-mark": {
+        "role": "accent",
+        "displayName": "Forest Mark",
+        "canonical": "#a9cd8c"
+      },
+      "leaf-settled": {
+        "role": "neutral",
+        "displayName": "Settled Leaf",
+        "canonical": "#9ea08f"
       }
     },
     "typographyMeta": {

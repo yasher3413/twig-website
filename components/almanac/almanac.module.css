@@ -93,3 +93,14 @@
   padding-bottom: 12px;
   caption-side: top;
 }
+
+.table a {
+  color: var(--mark, var(--moss));
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+.table a:hover {
+  text-decoration-color: currentColor;
+}

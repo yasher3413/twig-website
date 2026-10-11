@@ -1,0 +1,20 @@
+.slotWrap {
+  padding-bottom: clamp(40px, 5vw, 72px);
+}
+
+@media (min-width: 1024px) {
+  .slotWrap {
+    padding-left: calc(var(--gutter) + 212px);
+  }
+}
+
+.p {
+  max-width: 62ch;
+  margin: 0 0 24px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.p a {
+  color: var(--moss);
+}

@@ -39,9 +39,9 @@ export default async function ReleasesPage() {
       <article id={versionAnchor(latest.version)} className={styles.featured} aria-labelledby="latest-h">
         <div className={`wrap ${styles.grid}`}>
           <div className={styles.meta}>
-            <p className={`${styles.version} tnum`} id="latest-h">
+            <h2 className={`${styles.version} tnum`} id="latest-h">
               {latest.version}
-            </p>
+            </h2>
             <p className={`${styles.date} tnum`}>
               <time dateTime={latest.date}>{formatDate(latest.date)}</time>
               <span>Latest{latest.dmgSize ? ` · ${formatBytes(latest.dmgSize)}` : ""}</span>

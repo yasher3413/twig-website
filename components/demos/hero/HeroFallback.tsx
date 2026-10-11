@@ -14,7 +14,7 @@ export function HeroFallback() {
         <Viewport className={styles.viewport}>
           <article className={styles.page}>
             <p className={styles.pageKicker}>{page.page.kicker}</p>
-            <h3 className={styles.pageTitle}>{page.page.title}</h3>
+            <p className={styles.pageTitle}>{page.page.title}</p>
             <p className={styles.pageLede}>{page.page.lede}</p>
           </article>
         </Viewport>

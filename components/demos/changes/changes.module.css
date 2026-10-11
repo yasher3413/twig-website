@@ -12,7 +12,6 @@
   font-family: "Iowan Old Style", "Palatino", Georgia, serif;
   font-size: 14px;
   line-height: 1.6;
-  transition: max-width 0.3s var(--ease-grow);
 }
 
 @container twigwin (min-width: 760px) {

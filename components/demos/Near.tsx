@@ -24,8 +24,8 @@ export function Near({ children, minHeight, label }: { children: React.ReactNode
     return () => io.disconnect();
   }, []);
   return (
-    <div ref={ref} style={{ minHeight }} aria-busy={!near} aria-label={!near ? label : undefined}>
-      {near ? children : null}
+    <div ref={ref} style={{ minHeight }} aria-busy={!near}>
+      {near ? children : label ? <span className="sr-only">{label}</span> : null}
     </div>
   );
 }

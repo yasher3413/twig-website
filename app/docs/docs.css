@@ -1,3 +1,42 @@
+/* Docs only: Fumadocs' styles load here, never on the marketing pages. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+/* Fumadocs, dressed in twig: its colour roles point at twig's tokens, which
+   already switch with the theme. */
+:root,
+.dark {
+  --color-fd-background: var(--paper);
+  --color-fd-foreground: var(--ink);
+  --color-fd-muted: var(--strip);
+  --color-fd-muted-foreground: var(--muted);
+  --color-fd-popover: var(--surface);
+  --color-fd-popover-foreground: var(--ink);
+  --color-fd-card: var(--surface);
+  --color-fd-card-foreground: var(--ink);
+  --color-fd-border: var(--border-strong);
+  --color-fd-primary: var(--moss);
+  --color-fd-primary-foreground: var(--paper);
+  --color-fd-secondary: var(--strip);
+  --color-fd-secondary-foreground: var(--ink);
+  --color-fd-accent: var(--moss-tint);
+  --color-fd-accent-foreground: var(--ink);
+  --color-fd-ring: var(--moss);
+  --color-fd-overlay: color-mix(in srgb, var(--forest) 30%, transparent);
+  --color-fd-info: var(--f-ocean);
+  --color-fd-warning: #a67c1d;
+  --color-fd-success: var(--moss);
+  --color-fd-idea: #a85c32;
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted: var(--strip);
+  --color-fd-secondary: var(--strip);
+  --color-fd-muted-foreground: var(--muted);
+}
+
 /* Docs in twig's reading register: Public Sans at a comfortable measure,
    Young Serif titles, moss links, almanac-ruled tables. */
 .docs-wordmark {

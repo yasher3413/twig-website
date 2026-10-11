@@ -10,7 +10,7 @@ export function baseUrl(): string {
 
 export function pageMeta({ title, description, path }: { title?: string; description: string; path: string }): Metadata {
   return {
-    title,
+    ...(title ? { title } : {}),
     description,
     alternates: { canonical: path },
     openGraph: { title: title ?? "twig", description, url: path, siteName: "twig", type: "website", locale: "en_GB" },

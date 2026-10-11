@@ -229,7 +229,7 @@
   left: -10px;
   bottom: calc(4px + var(--lane) * 12px);
   transform: translateX(calc(var(--p) * 100cqw));
-  transition: transform 0.12s linear;
+  transition: transform 0.25s linear;
   --leaf: var(--mark-moss);
   --twig-stem: var(--f-moss);
   --leaf-asleep: color-mix(in srgb, var(--on-moss) 40%, transparent);

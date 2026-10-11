@@ -14,6 +14,8 @@ export const publicSans = localFont({
   src: "../public/fonts/PublicSans-var.woff2",
   variable: "--font-public-sans",
   weight: "100 900",
-  display: "swap",
+  // Body text: on a slow first visit, keep the near-identical system sans
+  // rather than repainting every paragraph when the font arrives.
+  display: "optional",
   preload: true,
 });

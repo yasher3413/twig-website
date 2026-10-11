@@ -17,6 +17,7 @@ export function LivingWindow() {
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -24,13 +25,16 @@ export function LivingWindow() {
     if (ref.current) io.observe(ref.current);
     const onVis = () => setVisible(document.visibilityState === "visible");
     document.addEventListener("visibilitychange", onVis);
+    // Let the page finish loading and painting before the story starts.
+    const start = window.setTimeout(() => setSettled(true), 2200);
     return () => {
+      clearTimeout(start);
       io.disconnect();
       document.removeEventListener("visibilitychange", onVis);
     };
   }, []);
 
-  const live = useLivingTabs(inView && visible && !paused && !reduced);
+  const live = useLivingTabs(settled && inView && visible && !paused && !reduced);
   const tabs = reduced ? SETTLED : live.tabs;
   const activeId = reduced ? SETTLED[SETTLED.length - 1].id : live.activeId;
   const awake = tabs.filter((t) => t.state !== "asleep").length;
@@ -51,7 +55,7 @@ export function LivingWindow() {
         <Viewport className={styles.viewport}>
           <article key={page.id} className={styles.page}>
             <p className={styles.pageKicker}>{page.page.kicker}</p>
-            <h3 className={styles.pageTitle}>{page.page.title}</h3>
+            <p className={styles.pageTitle}>{page.page.title}</p>
             <p className={styles.pageLede}>{page.page.lede}</p>
             {page.page.body.map((b, i) => (
               <p key={i} className={styles.pageBody}>

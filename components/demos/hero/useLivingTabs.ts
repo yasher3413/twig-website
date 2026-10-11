@@ -54,7 +54,7 @@ export function useLivingTabs(running: boolean) {
       const dt = last.current === null ? 0 : Math.min(0.1, (now - last.current) / 1000);
       last.current = now;
       acc += dt;
-      if (acc >= 0.1) {
+      if (acc >= 0.25) {
         const step = acc;
         acc = 0;
         setS((prev) => {

@@ -42,7 +42,7 @@ export default function BrandPage() {
       <PageSection id="icon" title="Icon">
         <div className={styles.assetRow}>
           <div className={styles.iconTile}>
-            <Image src="/brand/twig-icon-512.png" alt="The twig app icon: a moss twig with three leaves and a bud on warm paper" width={200} height={200} />
+            <Image src="/brand/twig-icon-512.png" alt="The twig app icon: a moss twig with three leaves and a bud on warm paper" width={200} height={200} priority />
           </div>
           <ul className={styles.downloads}>
             <li>

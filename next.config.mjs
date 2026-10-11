@@ -9,6 +9,8 @@ const nextConfig = {
   turbopack: { root },
   outputFileTracingRoot: root,
   poweredByHeader: false,
+  // Inline the (small) CSS so first paint never waits on a stylesheet request.
+  experimental: { inlineCss: true },
   images: { formats: ["image/avif", "image/webp"] },
 };
 

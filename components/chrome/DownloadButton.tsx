@@ -28,7 +28,7 @@ export function DownloadButton({
       {size !== "sm" && (
         <span className={`${styles.downloadChip} tnum`}>
           v{version}
-          <span aria-hidden="true"> · </span>
+          <span aria-hidden="true">{"\u00a0·\u00a0"}</span>
           <span className={styles.srComma}>, </span>Apple Silicon
         </span>
       )}

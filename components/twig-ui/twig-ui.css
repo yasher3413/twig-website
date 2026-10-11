@@ -422,7 +422,8 @@
 /* The window narrows on small screens the way the app's own chrome does:
    tools go first, then the space switcher. */
 @container twigwin (max-width: 720px) {
-  .twig .toolbar-tools {
+  .twig .toolbar-tools,
+  .twig .tab-actions {
     display: none;
   }
 }

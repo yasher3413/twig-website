@@ -1,0 +1,319 @@
+.hero {
+  position: relative;
+  overflow: clip;
+  padding: clamp(28px, 4.2vw, 64px) 0 clamp(56px, 6vw, 96px);
+  --mark: var(--moss);
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  gap: clamp(40px, 6vw, 72px);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: 56px;
+  }
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.title {
+  font-size: clamp(46px, 5.6vw, 96px);
+}
+
+.lede {
+  margin: 24px 0 0;
+  max-width: 34ch;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 30px;
+}
+
+.secondary {
+  font-weight: 560;
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 5px;
+  transition: text-decoration-color 0.2s var(--ease-grow);
+}
+
+.secondary:hover {
+  text-decoration-color: var(--moss);
+}
+
+.facts {
+  margin: 22px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.demo {
+  position: relative;
+  min-width: 0;
+  padding: 40px 0 8px;
+}
+
+/* The moss field: it starts just left of the window and runs to the
+   viewport's edge, so it lines up at every width. On phones it runs
+   edge to edge beneath the copy. */
+.demo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -200px;
+  left: calc(-1 * var(--gutter));
+  right: calc(-1 * var(--gutter));
+  background: var(--f-moss);
+}
+
+@media (min-width: 1024px) {
+  .demo {
+    padding: 0;
+  }
+  .demo::before {
+    top: -200px;
+    left: -48px;
+    right: -100vw;
+  }
+}
+
+.stage {
+  position: relative;
+  --on: var(--on-moss);
+}
+
+/* Leaf light: soft dappled shade behind the window, one light source. */
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: -12% -8% 10% -6%;
+  background:
+    radial-gradient(38% 30% at 30% 30%, var(--sun), transparent 70%),
+    radial-gradient(30% 26% at 72% 64%, var(--sun), transparent 70%);
+  filter: blur(18px);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: dapple 14s var(--ease-drift) infinite alternate;
+}
+
+@keyframes dapple {
+  to {
+    transform: translate3d(2%, -1.5%, 0) scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage::before {
+    animation: none;
+  }
+}
+
+.window {
+  position: relative;
+  height: clamp(360px, 38vw, 580px);
+}
+
+.viewport {
+  --page-bg: #fbfaf6;
+}
+
+.page {
+  max-width: 54ch;
+  padding: 26px clamp(18px, 4%, 44px);
+  animation: pageIn 0.5s var(--ease-grow);
+  font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    animation: none;
+  }
+}
+
+.pageKicker {
+  margin: 0 0 8px;
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+.pageTitle {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(18px, 1.9vw, 26px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.pageLede {
+  margin: 10px 0 14px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pageBody {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: color-mix(in srgb, currentColor 72%, transparent);
+}
+
+.ledgerCard {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: min(400px, calc(100% - 28px));
+  padding: 12px 12px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-raise);
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+}
+
+.ledgerTitle {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------- Time ruler ---------- */
+.ruler {
+  margin-top: 26px;
+  color: var(--on-moss);
+}
+
+.rulerTrack {
+  position: relative;
+  height: 44px;
+  container-type: inline-size;
+  border-bottom: 1px solid color-mix(in srgb, var(--on-moss) 60%, transparent);
+}
+
+.marker {
+  position: absolute;
+  left: -10px;
+  bottom: calc(4px + var(--lane) * 12px);
+  transform: translateX(calc(var(--p) * 100cqw));
+  transition: transform 0.12s linear;
+  --leaf: var(--mark-moss);
+  --twig-stem: var(--f-moss);
+  --leaf-asleep: color-mix(in srgb, var(--on-moss) 40%, transparent);
+}
+
+.marker[data-asleep="true"] {
+  transition: transform 0.6s var(--ease-settle);
+}
+
+.rulerScale {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr) 0;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--on-moss) 85%, transparent);
+}
+
+.tick,
+.tickMajor {
+  position: relative;
+  padding-top: 10px;
+  white-space: nowrap;
+}
+
+.tick::before,
+.tickMajor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 5px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.tickMajor::before {
+  height: 8px;
+  opacity: 1;
+}
+
+.tickMajor:last-child {
+  width: 0;
+}
+
+.tickMajor:last-child::after {
+  content: "";
+}
+
+.tickMajor:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rulerPlaceholder {
+  height: 96px;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--on-moss);
+}
+
+.caption p {
+  margin: 0;
+  max-width: 52ch;
+}
+
+.demoNote {
+  opacity: 0.8;
+}
+
+.pause {
+  padding: 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--on-moss) 45%, transparent);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--on-moss);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+
+.pause:hover {
+  background: color-mix(in srgb, var(--on-moss) 12%, transparent);
+}

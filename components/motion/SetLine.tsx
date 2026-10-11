@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import styles from "./motion.module.css";
 
 // A headline set word by word: each word rises out of its own clip, like type
@@ -11,12 +12,14 @@ export function SetLine({ text, delay = 0, stagger = 55, className = "" }: { tex
       <span className={styles.srOnly}>{text}</span>
       <span aria-hidden="true">
         {words.map((w, i) => (
-          <span key={i} className={styles.word}>
-            <span className={styles.wordInner} style={{ animationDelay: `${delay + i * stagger}ms` }}>
-              {w}
+          <Fragment key={i}>
+            <span className={styles.word}>
+              <span className={styles.wordInner} style={{ animationDelay: `${delay + i * stagger}ms` }}>
+                {w}
+              </span>
             </span>
-            {i < words.length - 1 ? " " : ""}
-          </span>
+            {i < words.length - 1 ? " " : null}
+          </Fragment>
         ))}
       </span>
     </span>

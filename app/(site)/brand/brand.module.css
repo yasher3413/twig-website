@@ -1,0 +1,120 @@
+.assetRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.iconTile {
+  padding: 16px;
+  border-radius: 24px;
+  background: var(--strip);
+}
+
+.downloads {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.downloads li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.downloads a,
+.note a {
+  color: var(--moss);
+  font-weight: 560;
+}
+
+.marks {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .marks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.markTile {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  border-radius: 14px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+}
+
+.markTile img {
+  width: 60%;
+  height: auto;
+}
+
+.dark {
+  background: #101208;
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tokenGroup {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@media (min-width: 640px) {
+  .tokenGroup {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .tokenGroup {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.subhead {
+  margin: 32px 0 0;
+  font-size: 20px;
+}
+
+.shots {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.shots p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.shot {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-raise);
+  border: 1px solid var(--border);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+}

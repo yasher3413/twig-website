@@ -1,0 +1,64 @@
+.window {
+  height: clamp(440px, 40vw, 540px);
+}
+
+.viewport {
+  --page-bg: #fbfaf6;
+}
+
+.page {
+  max-width: 58ch;
+  padding: 28px clamp(18px, 4%, 44px);
+  font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: max-width 0.3s var(--ease-grow);
+}
+
+@container twigwin (min-width: 760px) {
+  .pageNarrow {
+    max-width: calc(100% - 380px);
+  }
+}
+
+.page p {
+  margin: 0 0 12px;
+}
+
+.kicker {
+  font-family: -apple-system, sans-serif;
+  font-size: 11px !important;
+  font-weight: 600;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+.title {
+  margin: 0 0 6px;
+  font-family: inherit;
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.stamp {
+  font-family: -apple-system, sans-serif;
+  font-size: 11.5px !important;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.note {
+  min-height: 3em;
+  margin: 16px 0 0;
+  font-size: 15px;
+  color: var(--on-muted);
+}

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { BranchProvider } from "@/components/motion/Branch";
 import { Hero } from "@/components/chapters/Hero";
+import { SleepingChapter } from "@/components/chapters/Sleeping";
+import { RecallChapter } from "@/components/chapters/RecallChapter";
+import { ChangesChapter } from "@/components/chapters/ChangesChapter";
 import { getLatest } from "@/lib/github";
 import { pageMeta, baseUrl } from "@/lib/seo";
 import { DOWNLOAD_URL, REPO_URL } from "@/lib/links";
@@ -33,13 +36,9 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BranchProvider>
         <Hero latest={latest} />
-        <div style={{ height: "60vh" }} data-chapter="next" data-node="leaf">
-          <div className="wrap branch-room" style={{ paddingTop: 80 }}>
-            <p data-node-anchor style={{ color: "var(--muted)" }}>
-              (chapters follow)
-            </p>
-          </div>
-        </div>
+        <SleepingChapter />
+        <RecallChapter />
+        <ChangesChapter />
       </BranchProvider>
     </main>
   );

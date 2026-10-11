@@ -517,6 +517,15 @@
   animation: twig-panel-in 220ms var(--ease);
 }
 
+/* Below 880px the app turns side panels into a full-width overlay. */
+@container twigwin (max-width: 640px) {
+  .twig .changes,
+  .twig .sweep {
+    width: 100%;
+    border-left: 0;
+  }
+}
+
 @keyframes twig-panel-in {
   from {
     transform: translateX(16px);

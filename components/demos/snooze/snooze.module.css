@@ -1,0 +1,179 @@
+.stage {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .stage {
+    grid-template-columns: minmax(0, 8fr) minmax(220px, 3fr);
+    align-items: stretch;
+  }
+}
+
+.window {
+  height: clamp(440px, 38vw, 520px);
+}
+
+.viewport {
+  --page-bg: #fbfaf6;
+}
+
+.page {
+  max-width: 54ch;
+  padding: 26px clamp(18px, 4%, 40px);
+  font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-family: -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+.title {
+  margin: 0 0 8px;
+  font-family: inherit;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 600;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: start center;
+  padding-top: 28px;
+  background: color-mix(in srgb, var(--strip) 45%, transparent);
+}
+
+/* The almanac page beside the window: when each snoozed tab returns. */
+.calendar {
+  padding: 18px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--paper) 88%, var(--chapter-bg));
+  color: var(--ink);
+  box-shadow: var(--shadow-raise);
+}
+
+.calTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.days {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.day {
+  min-height: 52px;
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.day[data-today="true"] .dayName {
+  color: var(--moss);
+}
+
+.dayName {
+  display: block;
+  font-size: 13px;
+  font-weight: 560;
+  color: var(--muted);
+}
+
+.chip {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: var(--moss-tint);
+  font-family: -apple-system, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.chipTime {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--moss);
+}
+
+.chipIn {
+  animation: drift 0.9s var(--ease-unfurl) both;
+}
+
+@keyframes drift {
+  from {
+    opacity: 0;
+    transform: translate(-56px, -18px) rotate(-3deg);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 20px;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 560;
+  cursor: pointer;
+}
+
+.action kbd {
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--paper) 18%, transparent);
+  font-family: -apple-system, sans-serif;
+  font-size: 12px;
+}
+
+.quiet {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--on) 40%, transparent);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--on);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 560;
+  cursor: pointer;
+}
+
+.narration {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--on-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chipIn {
+    animation: none;
+  }
+}

@@ -34,7 +34,8 @@ for (const theme of themes) {
     const page = await ctx.newPage();
     page.on("console", (m) => m.type() === "error" && errors.push(`${w}/${theme}: ${m.text()}`));
     page.on("pageerror", (e) => errors.push(`${w}/${theme}: ${e.message}`));
-    await page.goto(base + path, { waitUntil: "networkidle" });
+    await page.goto(base + path, { waitUntil: "load" });
+    await page.evaluate(() => document.fonts.ready);
     if (scroll) await page.evaluate((y) => window.scrollTo(0, Number(y)), scroll);
     await page.waitForTimeout(wait);
     const file = `${out}/${prefix}-${w}-${theme}${flag("reduced") ? "-rm" : ""}.png`;

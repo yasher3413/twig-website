@@ -20,6 +20,12 @@
   --shadow-pop: 0 8px 16px rgba(35, 38, 31, 0.1), 0 24px 48px rgba(35, 38, 31, 0.16);
   --sun: rgba(255, 246, 214, 0.55);
 
+  --twig-stem: #3f5b30;
+  --twig-leaf: #6f9a55;
+  --twig-leaf-light: #8fbb6e;
+  --leaf: #6f9a55;
+  --leaf-asleep: #b4b7a8;
+
   --forest: #101208;
   --forest-ink: #e9e7dd;
   --forest-muted: #a3a594;
@@ -60,6 +66,11 @@
     --shadow-raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
     --shadow-pop: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.55);
     --sun: rgba(214, 228, 190, 0.08);
+    --twig-stem: #7da35f;
+    --twig-leaf: #8fbb6e;
+    --twig-leaf-light: #b5d69a;
+    --leaf: #8fbb6e;
+    --leaf-asleep: #5d6152;
     --forest: #0b0d05;
     --f-moss: #243320;   --on-moss: #e9e7dd;   --mark-moss: #8fbb6e;
     --f-ocean: #1a3236;  --on-ocean: #e9e7dd;  --mark-ocean: #6fb8c4;
@@ -87,6 +98,11 @@
   --shadow-raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-pop: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.55);
   --sun: rgba(214, 228, 190, 0.08);
+  --twig-stem: #7da35f;
+  --twig-leaf: #8fbb6e;
+  --twig-leaf-light: #b5d69a;
+  --leaf: #8fbb6e;
+  --leaf-asleep: #5d6152;
   --forest: #0b0d05;
   --f-moss: #243320;   --on-moss: #e9e7dd;   --mark-moss: #8fbb6e;
   --f-ocean: #1a3236;  --on-ocean: #e9e7dd;  --mark-ocean: #6fb8c4;
@@ -171,6 +187,32 @@
   ::selection {
     background: var(--moss-tint);
     color: var(--ink);
+  }
+
+  input,
+  textarea {
+    caret-color: var(--moss);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  html {
+    scrollbar-color: var(--border-strong) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    background-color: var(--border-strong);
   }
 
   :focus-visible {

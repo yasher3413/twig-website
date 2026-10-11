@@ -25,16 +25,6 @@
   max-width: 640px;
 }
 
-/* The almanac row's date, on the hero's own hairline, as on every chapter. */
-.today {
-  margin: 0 0 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--rule);
-  font-weight: 560;
-  font-size: 15px;
-  color: var(--moss);
-}
-
 .title {
   font-size: clamp(46px, 5.6vw, 80px);
 }

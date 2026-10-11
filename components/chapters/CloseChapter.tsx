@@ -11,7 +11,7 @@ export function CloseChapter({ latest }: { latest: Release }) {
   return (
     <section id="download-now" className={styles.close} data-chapter="download-now" data-node="bud" aria-labelledby="close-title">
       <div className="wrap branch-room">
-        <EntryHead when="Now" id="close-title" size="xl">
+        <EntryHead when="Now" id="close-title" size="lg">
           Plant it.
         </EntryHead>
         <div className={styles.grid}>

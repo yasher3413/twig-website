@@ -8,7 +8,7 @@ export type Field = "paper" | "strip" | "moss" | "ocean" | "clay" | "honey" | "p
 const FIELD_VARS: Record<Field, React.CSSProperties> = {
   paper: { "--chapter-bg": "var(--paper)", "--on": "var(--ink)", "--on-muted": "var(--muted)", "--mark": "var(--moss)" } as React.CSSProperties,
   strip: { "--chapter-bg": "var(--strip)", "--on": "var(--ink)", "--on-muted": "var(--muted)", "--mark": "var(--moss)" } as React.CSSProperties,
-  forest: { "--chapter-bg": "var(--forest)", "--on": "var(--forest-ink)", "--on-muted": "var(--forest-muted)", "--mark": "#a9cd8c" } as React.CSSProperties,
+  forest: { "--chapter-bg": "var(--forest)", "--on": "var(--forest-ink)", "--on-muted": "var(--forest-muted)", "--mark": "var(--forest-mark)" } as React.CSSProperties,
   moss: fieldVars("moss"),
   ocean: fieldVars("ocean"),
   clay: fieldVars("clay"),

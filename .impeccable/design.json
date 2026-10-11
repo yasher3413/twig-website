@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T11:04:15+00:00",
+  "title": "Design System: twig",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f6f4ee",
+        "tonalRamp": [
+          "#0c0b07",
+          "#252420",
+          "#41403b",
+          "#5f5d58",
+          "#82807b",
+          "#a6a49f",
+          "#cccac5",
+          "#f0eee8"
+        ]
+      },
+      "strip": {
+        "role": "neutral",
+        "displayName": "Almanac Strip",
+        "canonical": "#e8e5d8",
+        "tonalRamp": [
+          "#0d0b04",
+          "#26241a",
+          "#424035",
+          "#605e53",
+          "#838075",
+          "#a8a599",
+          "#cecbbe",
+          "#f2efe2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Olive Ink",
+        "canonical": "#23261f",
+        "tonalRamp": [
+          "#0a0c06",
+          "#22251e",
+          "#3e413a",
+          "#5c5f57",
+          "#7e8279",
+          "#a2a69d",
+          "#c8ccc3",
+          "#ecf0e7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Lichen Grey",
+        "canonical": "#62665a",
+        "tonalRamp": [
+          "#0a0c04",
+          "#22261b",
+          "#3e4136",
+          "#5c5f54",
+          "#7e8276",
+          "#a2a79a",
+          "#c8cdbf",
+          "#ecf1e3"
+        ]
+      },
+      "moss": {
+        "role": "primary",
+        "displayName": "Twig Moss",
+        "canonical": "#4b6b3a",
+        "tonalRamp": [
+          "#001100",
+          "#0f2c00",
+          "#2b4919",
+          "#486837",
+          "#6a8c59",
+          "#8eb17c",
+          "#b3d7a1",
+          "#e0f7d5"
+        ]
+      },
+      "moss-tint": {
+        "role": "primary",
+        "displayName": "Moss Tint",
+        "canonical": "rgba(75, 107, 58, 0.12)"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "rgba(35, 38, 31, 0.22)"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "canonical": "rgba(35, 38, 31, 0.08)"
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Border Strong",
+        "canonical": "rgba(35, 38, 31, 0.16)"
+      },
+      "twig-stem": {
+        "role": "tertiary",
+        "displayName": "Twig Stem",
+        "canonical": "#3f5b30",
+        "tonalRamp": [
+          "#001100",
+          "#122b01",
+          "#2d481e",
+          "#4b673c",
+          "#6c8b5d",
+          "#90b081",
+          "#b5d6a5",
+          "#e0f7d5"
+        ]
+      },
+      "leaf": {
+        "role": "tertiary",
+        "displayName": "Leaf",
+        "canonical": "#6f9a55",
+        "tonalRamp": [
+          "#001200",
+          "#062e00",
+          "#244b00",
+          "#426a26",
+          "#648e4a",
+          "#88b46e",
+          "#addb92",
+          "#e1f7d5"
+        ]
+      },
+      "leaf-asleep": {
+        "role": "tertiary",
+        "displayName": "Sleeping Leaf",
+        "canonical": "#b4b7a8",
+        "tonalRamp": [
+          "#0b0c04",
+          "#23251a",
+          "#3f4135",
+          "#5d5f52",
+          "#7f8274",
+          "#a4a698",
+          "#c9ccbd",
+          "#edf1e1"
+        ]
+      },
+      "forest": {
+        "role": "tertiary",
+        "displayName": "Forest Night",
+        "canonical": "#101208",
+        "tonalRamp": [
+          "#0a0c04",
+          "#23251b",
+          "#3f4136",
+          "#5c5f53",
+          "#7f8275",
+          "#a3a699",
+          "#c9ccbe",
+          "#edf1e2"
+        ]
+      },
+      "forest-ink": {
+        "role": "tertiary",
+        "displayName": "Forest Ink",
+        "canonical": "#e9e7dd",
+        "tonalRamp": [
+          "#0d0b05",
+          "#26241d",
+          "#424038",
+          "#605e55",
+          "#828077",
+          "#a7a59b",
+          "#cdcbc1",
+          "#f1efe5"
+        ]
+      },
+      "forest-muted": {
+        "role": "tertiary",
+        "displayName": "Forest Muted",
+        "canonical": "#a3a594",
+        "tonalRamp": [
+          "#0b0c02",
+          "#242518",
+          "#404133",
+          "#5d5f50",
+          "#808272",
+          "#a4a695",
+          "#caccbb",
+          "#eef0de"
+        ]
+      },
+      "field-moss": {
+        "role": "secondary",
+        "displayName": "Moss Field",
+        "canonical": "#4b6b3a",
+        "tonalRamp": [
+          "#001100",
+          "#0f2c00",
+          "#2b4919",
+          "#486837",
+          "#6a8c59",
+          "#8eb17c",
+          "#b3d7a1",
+          "#e0f7d5"
+        ]
+      },
+      "mark-moss": {
+        "role": "secondary",
+        "displayName": "Moss Mark",
+        "canonical": "#dcedce",
+        "tonalRamp": [
+          "#050f00",
+          "#1c2810",
+          "#37452b",
+          "#556348",
+          "#77866a",
+          "#9bab8e",
+          "#c0d1b3",
+          "#e4f5d6"
+        ]
+      },
+      "field-ocean": {
+        "role": "secondary",
+        "displayName": "Ocean Field",
+        "canonical": "#2b6e7a",
+        "tonalRamp": [
+          "#00111b",
+          "#002c37",
+          "#004954",
+          "#246874",
+          "#4a8b98",
+          "#6fb1bd",
+          "#95d7e4",
+          "#c9f8ff"
+        ]
+      },
+      "mark-ocean": {
+        "role": "secondary",
+        "displayName": "Ocean Mark",
+        "canonical": "#d9f1f3",
+        "tonalRamp": [
+          "#000e10",
+          "#142829",
+          "#304446",
+          "#4d6264",
+          "#6f8587",
+          "#93aaac",
+          "#b8d0d2",
+          "#dcf4f6"
+        ]
+      },
+      "field-clay": {
+        "role": "secondary",
+        "displayName": "Clay Field",
+        "canonical": "#8f4a26",
+        "tonalRamp": [
+          "#290000",
+          "#490700",
+          "#6a2900",
+          "#8d4824",
+          "#b36b47",
+          "#db8f6b",
+          "#ffb58f",
+          "#ffe5d3"
+        ]
+      },
+      "mark-clay": {
+        "role": "secondary",
+        "displayName": "Clay Mark",
+        "canonical": "#f6d8c5",
+        "tonalRamp": [
+          "#180600",
+          "#341e0f",
+          "#513a2a",
+          "#715747",
+          "#957a69",
+          "#ba9e8c",
+          "#e1c4b1",
+          "#ffe8d4"
+        ]
+      },
+      "field-honey": {
+        "role": "secondary",
+        "displayName": "Honey Field",
+        "canonical": "#e0b24d",
+        "tonalRamp": [
+          "#200000",
+          "#3e1900",
+          "#5d3700",
+          "#7d5600",
+          "#a2790d",
+          "#c89e41",
+          "#efc469",
+          "#feedc9"
+        ]
+      },
+      "on-honey": {
+        "role": "secondary",
+        "displayName": "Ink on Honey",
+        "canonical": "#23261f",
+        "tonalRamp": [
+          "#0a0c06",
+          "#22251e",
+          "#3e413a",
+          "#5c5f57",
+          "#7e8279",
+          "#a2a69d",
+          "#c8ccc3",
+          "#ecf0e7"
+        ]
+      },
+      "mark-honey": {
+        "role": "secondary",
+        "displayName": "Honey Mark",
+        "canonical": "#5a4210",
+        "tonalRamp": [
+          "#190500",
+          "#351f00",
+          "#533b06",
+          "#72592a",
+          "#967c4d",
+          "#bca070",
+          "#e3c695",
+          "#ffecc9"
+        ]
+      },
+      "field-plum": {
+        "role": "secondary",
+        "displayName": "Plum Field",
+        "canonical": "#6b4a82",
+        "tonalRamp": [
+          "#170028",
+          "#321245",
+          "#4f2f65",
+          "#6e4d85",
+          "#9270ab",
+          "#b794d1",
+          "#deb9f9",
+          "#f9e6ff"
+        ]
+      },
+      "mark-plum": {
+        "role": "secondary",
+        "displayName": "Plum Mark",
+        "canonical": "#e2d0ef",
+        "tonalRamp": [
+          "#110519",
+          "#2b1d34",
+          "#483952",
+          "#665671",
+          "#897995",
+          "#ae9dba",
+          "#d4c3e1",
+          "#f9e6ff"
+        ]
+      },
+      "field-slate": {
+        "role": "secondary",
+        "displayName": "Slate Field",
+        "canonical": "#52564c",
+        "tonalRamp": [
+          "#090c05",
+          "#22261d",
+          "#3e4138",
+          "#5b5f55",
+          "#7e8277",
+          "#a2a79b",
+          "#c8cdc1",
+          "#ecf1e5"
+        ]
+      },
+      "mark-slate": {
+        "role": "secondary",
+        "displayName": "Slate Mark",
+        "canonical": "#dfe1d6",
+        "tonalRamp": [
+          "#0b0c05",
+          "#24251d",
+          "#3f4138",
+          "#5d5f55",
+          "#808177",
+          "#a4a69b",
+          "#caccc1",
+          "#eef0e5"
+        ]
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "#17190f",
+        "tonalRamp": [
+          "#0a0c04",
+          "#23251b",
+          "#3f4136",
+          "#5d5f53",
+          "#7f8275",
+          "#a3a699",
+          "#c9ccbf",
+          "#edf0e2"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Night Surface",
+        "canonical": "#1c1f13",
+        "tonalRamp": [
+          "#0a0d03",
+          "#232619",
+          "#3e4234",
+          "#5c6052",
+          "#7e8274",
+          "#a3a797",
+          "#c8cdbd",
+          "#ecf1e0"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#e9e7dd",
+        "tonalRamp": [
+          "#0d0b05",
+          "#26241d",
+          "#424038",
+          "#605e55",
+          "#828077",
+          "#a7a59b",
+          "#cdcbc1",
+          "#f1efe5"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Night Muted",
+        "canonical": "#9a9c8d",
+        "tonalRamp": [
+          "#0b0c03",
+          "#242519",
+          "#404134",
+          "#5d5f51",
+          "#808273",
+          "#a4a697",
+          "#caccbd",
+          "#eef0e0"
+        ]
+      },
+      "dark-moss": {
+        "role": "primary",
+        "displayName": "Spring Moss",
+        "canonical": "#8fbb6e",
+        "tonalRamp": [
+          "#001200",
+          "#082e00",
+          "#254b00",
+          "#436b1e",
+          "#658f43",
+          "#88b467",
+          "#addb8c",
+          "#e2f6d4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, capped at 80px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Chapter headings, about 16ch."
+      },
+      "headline-md": {
+        "displayName": "Headline MD",
+        "purpose": "Inside-page titles and secondary entry heads."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-sections."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero sentence, muted, about 34ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 44ch in chapter columns, 68ch on long pages."
+      },
+      "label": {
+        "displayName": "Almanac Label",
+        "purpose": "The 'when' column, provenance links, secondary actions. Sentence case."
+      },
+      "table-head": {
+        "displayName": "Table Head",
+        "purpose": "Ruled table column heads over an ink rule."
+      }
+    },
+    "shadows": [
+      {
+        "name": "raise",
+        "value": "0 1px 2px rgba(35, 38, 31, 0.1), 0 4px 12px rgba(35, 38, 31, 0.07)",
+        "purpose": "Small app surfaces: popovers inside windows, the research packet."
+      },
+      {
+        "name": "pop",
+        "value": "0 8px 16px rgba(35, 38, 31, 0.1), 0 24px 48px rgba(35, 38, 31, 0.16)",
+        "purpose": "twig windows, demo panels, the mobile nav sheet."
+      },
+      {
+        "name": "download",
+        "value": "0 1px 2px rgba(35, 38, 31, 0.18), 0 6px 18px -6px rgba(35, 38, 31, 0.35)",
+        "purpose": "The Download button at rest."
+      },
+      {
+        "name": "download-hover",
+        "value": "0 2px 4px rgba(35, 38, 31, 0.2), 0 12px 28px -8px rgba(35, 38, 31, 0.42)",
+        "purpose": "The Download button on hover."
+      },
+      {
+        "name": "raise-dark",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)",
+        "purpose": "Raise in dark theme."
+      },
+      {
+        "name": "pop-dark",
+        "value": "0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.55)",
+        "purpose": "Pop in dark theme."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-grow",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "State changes and hover, 0.16 to 0.24s; branch forks drawing on."
+      },
+      {
+        "name": "ease-unfurl",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Things opening: leaves waking, the Download leaf, the nav sheet."
+      },
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.33, 0, 0.15, 1)",
+        "purpose": "Things going to sleep: leaves settling, 1.2 to 1.4s."
+      },
+      {
+        "name": "ease-drift",
+        "value": "cubic-bezier(0.45, 0, 0.55, 1)",
+        "purpose": "Ambient light movement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "420px"
+      },
+      {
+        "name": "scale-horizontal",
+        "value": "760px"
+      },
+      {
+        "name": "nav",
+        "value": "900px"
+      },
+      {
+        "name": "chapter-grid",
+        "value": "1024px"
+      },
+      {
+        "name": "frame",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Download for Mac",
+      "kind": "button",
+      "refersTo": "button-download-lg",
+      "description": "The site's only filled button: moss pill, drawn leaf that unfurls on hover, and a version chip.",
+      "html": "<a class=\"ds-download\" href=\"#\"><svg class=\"ds-leaf\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path class=\"ds-leaf-closed\" d=\"M5 20 C 6 15, 9 9.5, 15 6.5 C 13 13, 10 17.5, 5 20 Z\"/><path class=\"ds-leaf-open\" d=\"M3 21 C 3.5 14, 8 6.5, 21 3 C 19.5 13.5, 12 19.5, 3 21 Z\"/></svg><span>Download for Mac</span><span class=\"ds-chip\">v0.1.3 \u00b7 Apple Silicon</span></a>",
+      "css": ".ds-download{--fg:var(--paper,#f6f4ee);display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 10px 0 22px;border-radius:999px;background:var(--moss,#4b6b3a);color:var(--fg);font-family:var(--font-text,'Public Sans',sans-serif);font-size:18px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(35,38,31,.18),0 6px 18px -6px rgba(35,38,31,.35);transition:transform .24s cubic-bezier(.22,1,.36,1),box-shadow .24s cubic-bezier(.22,1,.36,1)}.ds-download:hover{box-shadow:0 2px 4px rgba(35,38,31,.2),0 12px 28px -8px rgba(35,38,31,.42)}.ds-download:active{transform:translateY(1px)}.ds-download:focus-visible{outline:2px solid var(--moss,#4b6b3a);outline-offset:2px}.ds-chip{display:inline-flex;align-items:center;height:42px;padding:0 12px;border-radius:999px;background:color-mix(in oklab,var(--fg) 18%,transparent);font-size:.8em;font-weight:500;font-variant-numeric:tabular-nums lining-nums}.ds-leaf{fill:currentColor;overflow:visible}.ds-leaf path{transform-origin:4px 20px;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .3s cubic-bezier(.22,1,.36,1)}.ds-leaf-open{opacity:0;transform:rotate(-24deg) scale(.6)}.ds-download:hover .ds-leaf-open,.ds-download:focus-visible .ds-leaf-open{opacity:1;transform:none}.ds-download:hover .ds-leaf-closed,.ds-download:focus-visible .ds-leaf-closed{opacity:0;transform:rotate(12deg) scale(1.1)}"
+    },
+    {
+      "name": "Secondary link",
+      "kind": "button",
+      "refersTo": null,
+      "description": "Every secondary action: a 560-weight text link with a rule underline that turns moss.",
+      "html": "<a class=\"ds-secondary\" href=\"#\">See what's new in 0.1.3</a>",
+      "css": ".ds-secondary{font-family:var(--font-text,'Public Sans',sans-serif);font-weight:560;font-size:16px;color:var(--ink,#23261f);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:var(--rule,rgba(35,38,31,.22));text-underline-offset:5px;transition:text-decoration-color .2s cubic-bezier(.22,1,.36,1)}.ds-secondary:hover{text-decoration-color:var(--moss,#4b6b3a)}.ds-secondary:focus-visible{outline:2px solid var(--moss,#4b6b3a);outline-offset:2px;border-radius:4px}"
+    },
+    {
+      "name": "Header navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky 64px paper header: Young Serif wordmark, muted 15px links, palette trigger with a key cap.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\">twig</a><nav><a class=\"ds-nav\" href=\"#\">Features</a><a class=\"ds-nav\" href=\"#\">Docs</a><a class=\"ds-nav\" href=\"#\">Releases</a></nav><button class=\"ds-palette\">Search<span class=\"ds-kbd\">\u2318K</span></button></header>",
+      "css": ".ds-header{display:flex;align-items:center;gap:28px;height:64px;padding:0 24px;background:var(--paper,#f6f4ee);border-bottom:1px solid var(--border,rgba(35,38,31,.08));font-family:var(--font-text,'Public Sans',sans-serif)}.ds-wordmark{font-family:var(--font-display,'Young Serif',Georgia,serif);font-size:27px;line-height:1;letter-spacing:-.02em;color:var(--ink,#23261f);text-decoration:none}.ds-header nav{display:flex;gap:4px}.ds-nav{padding:8px 12px;border-radius:8px;font-size:15px;font-weight:500;color:var(--muted,#62665a);text-decoration:none;transition:color .16s cubic-bezier(.22,1,.36,1),background-color .16s cubic-bezier(.22,1,.36,1)}.ds-nav:hover{color:var(--ink,#23261f);background:var(--row-hover,rgba(35,38,31,.045))}.ds-nav:focus-visible,.ds-palette:focus-visible{outline:2px solid var(--moss,#4b6b3a);outline-offset:2px}.ds-palette{margin-left:auto;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 8px 0 12px;border:1px solid var(--border-strong,rgba(35,38,31,.16));border-radius:10px;background:var(--field,rgba(35,38,31,.05));color:var(--muted,#62665a);font:inherit;font-size:14px;cursor:pointer;transition:border-color .16s,color .16s}.ds-palette:hover{color:var(--ink,#23261f);border-color:var(--rule,rgba(35,38,31,.22))}.ds-kbd{font-size:12px;line-height:1;padding:4px 6px;border-radius:5px;background:var(--paper,#f6f4ee);border:1px solid var(--border-strong,rgba(35,38,31,.16))}"
+    },
+    {
+      "name": "Almanac entry head",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature: hairline rule, the 'when' in the chapter's mark colour in a 180px column, Young Serif headline beside it. Shown on the Ocean field.",
+      "html": "<section class=\"ds-field\"><div class=\"ds-entry\"><p class=\"ds-when\">Whenever you remember a phrase</p><h2 class=\"ds-entry-title\">Find a page by the words inside it.</h2></div></section>",
+      "css": ".ds-field{padding:48px 32px;background:var(--f-ocean,#2b6e7a);color:var(--on-ocean,#f6f4ee);--mark:var(--mark-ocean,#d9f1f3)}.ds-entry{display:grid;grid-template-columns:180px minmax(0,1fr);column-gap:32px;align-items:baseline;padding-top:22px;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent)}.ds-when{margin:0;font-family:var(--font-text,'Public Sans',sans-serif);font-weight:560;font-size:15px;line-height:1.35;letter-spacing:.005em;color:var(--mark);font-variant-numeric:tabular-nums lining-nums}.ds-entry-title{margin:0;max-width:16ch;font-family:var(--font-display,'Young Serif',Georgia,serif);font-weight:400;font-size:56px;line-height:.98;letter-spacing:-.03em}"
+    },
+    {
+      "name": "Ruled table",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Almanac table: ink head rule, hairline rows, tabular figures, mark-coloured links.",
+      "html": "<table class=\"ds-table\"><caption>Keys</caption><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><th>Command palette</th><td>\u2318K</td></tr><tr><th>Recall</th><td>\u2318\u21e7F</td></tr><tr><td colspan=\"2\"><a href=\"#\">All shortcuts</a></td></tr></tbody></table>",
+      "css": ".ds-table{width:100%;border-collapse:collapse;font-family:var(--font-text,'Public Sans',sans-serif);font-size:15px;color:var(--ink,#23261f);font-variant-numeric:tabular-nums lining-nums}.ds-table caption{text-align:left;font-family:var(--font-display,'Young Serif',Georgia,serif);font-size:22px;padding-bottom:12px}.ds-table th,.ds-table td{text-align:left;padding:11px 16px 11px 0;border-bottom:1px solid var(--rule,rgba(35,38,31,.22))}.ds-table thead th{font-weight:560;font-size:13px;color:var(--muted,#62665a);border-bottom-color:var(--ink,#23261f)}.ds-table tbody th{font-weight:500}.ds-table a{color:var(--moss,#4b6b3a);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 40%,transparent);text-underline-offset:3px}.ds-table a:hover{text-decoration-color:currentColor}.ds-table a:focus-visible{outline:2px solid var(--moss,#4b6b3a);outline-offset:2px}"
+    },
+    {
+      "name": "Designed blank",
+      "kind": "chip",
+      "refersTo": "designed-blank",
+      "description": "Dashed pill standing in for owner content not yet supplied.",
+      "html": "<span class=\"ds-blank\"><span class=\"ds-blank-dot\"></span>Socials, coming</span>",
+      "css": ".ds-blank{display:inline-flex;align-items:center;gap:8px;padding:5px 10px 5px 8px;border:1px dashed var(--border-strong,rgba(35,38,31,.16));border-radius:999px;color:var(--muted,#62665a);font-family:var(--font-text,'Public Sans',sans-serif);font-size:14px;line-height:1.2;white-space:nowrap}.ds-blank-dot{width:6px;height:6px;border-radius:50%;border:1px solid currentColor}"
+    },
+    {
+      "name": "twig window",
+      "kind": "card",
+      "refersTo": "twig-window",
+      "description": "Frame for the faithful app recreations: 12px radius, strong border, Pop shadow, system font at 13px.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-titlebar\"><i></i><i></i><i></i><span>Why your tabs sleep</span></div><div class=\"ds-page\">A sleeping tab gives up its webview and costs almost nothing.</div></div>",
+      "css": ".ds-window{overflow:hidden;border-radius:12px;background:var(--surface,#f6f4ee);border:1px solid var(--border-strong,rgba(35,38,31,.16));box-shadow:0 8px 16px rgba(35,38,31,.1),0 24px 48px rgba(35,38,31,.16),0 0 0 .5px rgba(0,0,0,.08);font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.4;color:var(--ink,#23261f);max-width:420px}.ds-titlebar{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;background:var(--strip,#e8e5d8);border-bottom:1px solid var(--border,rgba(35,38,31,.08))}.ds-titlebar i{width:12px;height:12px;border-radius:50%;background:rgba(35,38,31,.18)}.ds-titlebar span{margin-left:12px;padding:4px 10px;border-radius:8px;background:var(--surface,#f6f4ee)}.ds-page{padding:20px}"
+    },
+    {
+      "name": "Margin branch leaf",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature: a branch leaf in its three reading states (bud, awake, asleep).",
+      "html": "<div class=\"ds-branch\"><svg viewBox=\"0 0 60 40\" width=\"60\" height=\"40\"><path class=\"ds-leaf-body\" d=\"M4 36 C 6 24, 18 10, 40 4 C 36 22, 22 32, 4 36 Z\"/></svg><svg viewBox=\"0 0 60 40\" width=\"60\" height=\"40\"><path class=\"ds-leaf-curl\" d=\"M4 36 C 10 30, 16 22, 22 20 C 22 28, 14 34, 4 36 Z\"/></svg></div>",
+      "css": ".ds-branch{display:flex;gap:24px;padding:16px;border-left:3.4px solid var(--twig-stem,#3f5b30)}.ds-leaf-body{fill:var(--leaf,#6f9a55);transition:transform .9s cubic-bezier(.16,1,.3,1)}.ds-branch:hover .ds-leaf-body{transform:rotate(-6deg)}.ds-leaf-curl{fill:#9ea08f;stroke:rgba(16,18,8,.25);stroke-width:.8}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Gardener's Almanac",
+    "overview": "twig is a browser about time, so its site is printed like an almanac: entries keyed to *when* something happens, set on hairline rules, with tabular figures in the time columns. Flat lithographic colour fields, one per chapter, in the app's six accents (Moss, Ocean, Clay, Honey, Plum, Slate) own whole bands of the page; warm paper sits between them; two forest-night chapters are lit by a single soft moon. The proof is the product itself: twig's own chrome, recreated in code at true scale with the app's shadows, sits inside those fields and works.\n\nA moss branch grows down the left margin through every chapter on desktop. Each chapter is a leaf on it: the leaf unfurls when the chapter arrives, settles curled and grey-green once passed, and wakes on return; the checkpoints chapter forks it. The motif is the product's own metaphor (tabs are leaves, checkpoints are buds, forks are branches), so it carries meaning rather than ornament.\n\nThe register is calm and precise. Type does the persuading: Young Serif, the app's wordmark face, in large, tightly tracked display; Public Sans for everything read. Paper carries a fine static grain. Motion grows, unfurls, settles and drifts. It never bounces.",
+    "keyCharacteristics": [
+      "Whole-chapter flat colour fields in six accents, with paper between them; the only gradients are light (dappled sun on the hero field, the forest moon)",
+      "Almanac entries: a 180px \"when\" column, baseline-aligned with the headline on a shared hairline rule",
+      "Tabular lining figures wherever time, versions or sizes appear",
+      "Real twig UI at true scale as the only imagery; no stock or illustration beyond the drawn twig mark",
+      "A margin branch whose leaves track reading state",
+      "Light and dark themes are first-class; fields deepen to dusk tones in dark"
+    ],
+    "rules": [
+      {
+        "name": "The One Field Per Chapter Rule",
+        "body": "A chapter takes exactly one field as its full-bleed background. Colour fields never appear as cards, chips or decorative blocks inside another chapter; the Plum research packet is the one object-scale field, because it depicts the app's own packet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field Triplet Rule",
+        "body": "Never put text on a field without its `on-*` colour, and never use the raw accent as text on its own field; accents inside a chapter come from its `mark-*`. New fields add all three values, light and dark, and are checked for AA before use.",
+        "section": "colors"
+      },
+      {
+        "name": "The Moss Is The Action Rule",
+        "body": "On paper, moss means \"you can act here.\" Don't spend it on decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tracking Per Size Rule",
+        "body": "Young Serif has one master, so tracking tightens as size grows (-0.01em at 34px to -0.035em at display). Never set it at default tracking above 30px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Figures Line Up Rule",
+        "body": "Times, versions, sizes and shortcuts are set with tabular lining figures. The almanac is a table of times; its numbers must align.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight 560 Rule",
+        "body": "Emphasis in the text face is 560, not bold: labels, table heads, provenance links. 600 is reserved for the Download label and strong text in prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Date Column Rule",
+        "body": "Anything keyed to time lives in the 180px column or below its headline, never stacked above it. Nothing occupies that column in the hero.",
+        "section": "layout"
+      },
+      {
+        "name": "The App Shadows Only Rule",
+        "body": "If it isn't a piece of twig (a window, panel, sheet) or the Download button, it has no shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Grain Is Paper Rule",
+        "body": "A 180px static grain tile sits over everything at 5% multiply (3.5% screen in dark). It is texture, not depth; never animate it or raise its opacity.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give each chapter one full-bleed field and take every colour inside it from that field's triplet (`field-*`, `on-*`, `mark-*`).",
+      "**Do** key each chapter to a moment in the 180px \"when\" column on a hairline rule, in sentence case.",
+      "**Do** set times, versions, file sizes and shortcuts with tabular lining figures.",
+      "**Do** show the mechanism with twig's real UI at true scale, using the app's shadows (Raise, Pop) and radii (12px windows, 14px panels).",
+      "**Do** tighten Young Serif's tracking as it grows: -0.01em at 34px through -0.035em at display.",
+      "**Do** use the four named easings and give every animated state a composed reduced-motion end frame.",
+      "**Do** mark missing owner content with a designed blank, not invented data."
+    ],
+    "donts": [
+      "**Don't** add a second filled button. Download for Mac is the only one; everything else is an underlined 560 link.",
+      "**Don't** put a label, date or category above a headline. Time goes in the date column beside it, or below it on phones, and the hero has none.",
+      "**Don't** use colour fields as cards, chips or decorative blocks, or grade their fills. Gradients are light only: the dappled sun behind the hero window and the forest moon.",
+      "**Don't** shadow anything that isn't a piece of twig or the Download button.",
+      "**Don't** set Young Serif in anything but weight 400, or use it for body text, labels or UI.",
+      "**Don't** let motion bounce or overshoot; the magnetic button clamps at 6px and settles.",
+      "**Don't** set text in uppercase or wide tracking anywhere on the site."
+    ]
+  }
+}

@@ -74,7 +74,7 @@
 }
 
 .leafCurl {
-  fill: #9ea08f;
+  fill: var(--leaf-settled);
   stroke: rgba(16, 18, 8, 0.25);
   stroke-width: 0.8;
   opacity: 0;

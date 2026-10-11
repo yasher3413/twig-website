@@ -1,9 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { youngSerif, publicSans } from "./fonts";
+import { baseUrl } from "@/lib/seo";
 import "./global.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl()),
+  applicationName: "twig",
+  openGraph: { siteName: "twig", type: "website", locale: "en_GB" },
+  twitter: { card: "summary_large_image" },
   title: { default: "twig — the browser that remembers", template: "%s · twig" },
   description:
     "twig is a lightweight, tab-heavy browser for Mac. Tabs you aren't looking at sleep, and pages you've read stay findable. Free and open source.",

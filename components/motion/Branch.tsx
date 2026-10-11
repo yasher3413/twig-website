@@ -26,6 +26,7 @@ type Geometry = { height: number; nodes: Node[]; d: string; y0: number; yEnd: nu
 
 const LEAF_UP = "M0 0 C -4.5 -13, 9 -26, 21 -27 C 19 -14, 10 -4, 0 0 Z";
 const LEAF_VEIN = "M0 0 C 6 -9, 12 -17, 19 -25";
+const LEAF_CURLED = "M0 0 C -1.5 -8, 4 -15.5, 11.5 -17.5 C 13 -14, 9.5 -12, 7 -11.5 C 6.5 -6.5, 3.5 -2.5, 0 0 Z";
 const SLEEP_DELAY = 1200;
 
 function readMark(el: Element): string {
@@ -235,6 +236,7 @@ function BranchSvg({ hostRef, forked, heroLeaves }: { hostRef: React.RefObject<H
         <g key={`h${i}`} transform={`translate(${heroNode.x + (i % 2 ? -1 : 1)} ${heroNode.y + 46 + i * 30}) scale(${i % 2 ? -0.62 : 0.62} 0.62)`}>
           <g className={styles.leaf} data-state={s} style={{ color: heroNode.mark }}>
             <path d={LEAF_UP} className={styles.leafBody} />
+            <path d={LEAF_CURLED} className={styles.leafCurl} />
           </g>
         </g>
       ))}
@@ -259,6 +261,7 @@ function BranchSvg({ hostRef, forked, heroLeaves }: { hostRef: React.RefObject<H
               <g className={styles.leaf} data-state={s}>
                 <path d={LEAF_UP} className={styles.leafBody} />
                 <path d={LEAF_VEIN} className={styles.leafVein} />
+                <path d={LEAF_CURLED} className={styles.leafCurl} />
               </g>
             </g>
             <circle r={node.kind === "bud" || node.kind === "fork" ? 5.5 : 4} className={styles.bud} data-state={s} />

@@ -17,7 +17,6 @@ export function Hero({ latest }: { latest: Release }) {
     <section className={styles.hero} data-chapter="hero" data-node="leaf" aria-labelledby="hero-title">
       <div className={`wrap branch-room ${styles.grid}`}>
         <div className={styles.copy}>
-          <p className={`${styles.today} tnum`}>Today</p>
           <h1 id="hero-title" className={`${styles.title} display-xl`} data-node-anchor>
             <SetLine text="Every other browser forgets. twig remembers." delay={80} />
           </h1>

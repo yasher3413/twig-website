@@ -58,18 +58,36 @@
   opacity: 1;
 }
 
+/* Settled: the leaf swaps to a curled shape in one muted grey-green, and
+   droops, so it reads as a different state at a glance on any field. */
 .leaf[data-state="asleep"] {
-  transform: rotate(34deg) scale(0.8);
-  opacity: 0.42;
-  filter: grayscale(0.85);
+  transform: rotate(58deg) scale(0.86);
+  opacity: 1;
   transition:
     transform 1.4s var(--ease-settle),
-    opacity 1.4s var(--ease-settle),
-    filter 1.4s var(--ease-settle);
+    opacity 1.4s var(--ease-settle);
 }
 
 .leafBody {
   fill: currentColor;
+  transition: opacity 0.9s var(--ease-settle);
+}
+
+.leafCurl {
+  fill: #9ea08f;
+  stroke: rgba(16, 18, 8, 0.25);
+  stroke-width: 0.8;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-settle);
+}
+
+.leaf[data-state="asleep"] .leafBody,
+.leaf[data-state="asleep"] .leafVein {
+  opacity: 0;
+}
+
+.leaf[data-state="asleep"] .leafCurl {
+  opacity: 1;
 }
 
 .leafVein {

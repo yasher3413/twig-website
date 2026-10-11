@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: color-mix(in srgb, var(--strip) 55%, transparent);
+  animation: fade 0.14s var(--ease-grow);
+}
+
+.content {
+  position: fixed;
+  z-index: 151;
+  top: 13vh;
+  left: 50%;
+  width: min(620px, calc(100vw - 32px));
+  transform: translateX(-50%);
+  animation: rise 0.18s var(--ease-grow);
+}
+
+.content:focus {
+  outline: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px) scale(0.99);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .content {
+    animation: none;
+  }
+}
+
+.status {
+  margin-left: auto;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .content :global(.palette-foot) span:not(.status) {
+    display: none;
+  }
+}

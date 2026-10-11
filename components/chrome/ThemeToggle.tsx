@@ -6,6 +6,20 @@ type Choice = "system" | "light" | "dark";
 const ORDER: Choice[] = ["system", "light", "dark"];
 const LABEL: Record<Choice, string> = { system: "Theme: match system", light: "Theme: light", dark: "Theme: dark" };
 
+export function readTheme(): Choice {
+  try {
+    const t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") return t;
+  } catch {}
+  return "system";
+}
+
+export function cycleTheme(): Choice {
+  const c = ORDER[(ORDER.indexOf(readTheme()) + 1) % ORDER.length];
+  apply(c);
+  return c;
+}
+
 function apply(choice: Choice) {
   const root = document.documentElement;
   if (choice === "system") delete root.dataset.theme;
@@ -14,23 +28,20 @@ function apply(choice: Choice) {
     if (choice === "system") localStorage.removeItem("theme");
     else localStorage.setItem("theme", choice);
   } catch {}
+  window.dispatchEvent(new CustomEvent("twig:theme", { detail: choice }));
 }
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
   const [choice, setChoice] = useState<Choice>("system");
 
   useEffect(() => {
-    try {
-      const t = localStorage.getItem("theme");
-      if (t === "light" || t === "dark") setChoice(t);
-    } catch {}
+    setChoice(readTheme());
+    const on = (e: Event) => setChoice((e as CustomEvent<Choice>).detail);
+    window.addEventListener("twig:theme", on);
+    return () => window.removeEventListener("twig:theme", on);
   }, []);
 
-  const next = () => {
-    const c = ORDER[(ORDER.indexOf(choice) + 1) % ORDER.length];
-    setChoice(c);
-    apply(c);
-  };
+  const next = () => setChoice(cycleTheme());
 
   return (
     <button

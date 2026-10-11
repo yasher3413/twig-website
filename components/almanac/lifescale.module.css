@@ -10,13 +10,20 @@
 
 .marks {
   display: grid;
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  grid-template-columns: 1fr;
   list-style: none;
   margin: 0;
-  padding: 0;
-  overflow-x: auto;
-  border-top: 2px solid var(--ink);
-  scrollbar-width: none;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--ink);
+}
+
+@media (min-width: 760px) {
+  .marks {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 0;
+    border-left: 0;
+    border-top: 2px solid var(--ink);
+  }
 }
 
 .mark {
@@ -31,11 +38,20 @@
 .mark::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: 0;
-  width: 2px;
-  height: 12px;
+  top: 24px;
+  left: -16px;
+  width: 12px;
+  height: 2px;
   background: var(--ink);
+}
+
+@media (min-width: 760px) {
+  .mark::before {
+    top: -2px;
+    left: 0;
+    width: 2px;
+    height: 12px;
+  }
 }
 
 .at {

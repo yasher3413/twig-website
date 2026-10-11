@@ -37,6 +37,8 @@ const pairs = [
   ["light mark on honey (when text)", "#5a4210", "#e0b24d"],
   ["light mark on plum (when text)", "#e2d0ef", "#6b4a82"],
   ["light mark on slate (when text)", "#dfe1d6", "#52564c"],
+  ["packet band on plum", "#f6f4ee", "#6b4a82"],
+  ["packet contents ink on paper", "#23261f", "#f6f4ee"],
   ["moss button text", "#f6f4ee", "#4b6b3a"],
   ["dark moss button text", "#101208", "#8fbb6e"],
 ];

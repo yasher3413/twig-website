@@ -104,7 +104,7 @@ export function CheckpointsDemo() {
             {forked && (
               <g transform={`translate(${forkX + 150} ${Y - 92})`} className={`${styles.node} ${styles.forkNode}`} data-on={selectedId === forked.id}>
                 <circle r={selectedId === forked.id ? 9 : 7} className={styles.bud} />
-                <text x="16" y="5" className={styles.label} textAnchor="start">
+                <text x="-12" y="-18" className={styles.label} textAnchor="start">
                   {forked.name}
                 </text>
               </g>

@@ -177,7 +177,9 @@ function BranchSvg({ hostRef, forked, heroLeaves }: { hostRef: React.RefObject<H
         const pending = timers.current.get(i);
         let target: LeafState;
         if (drawY < node.y) target = "bud";
-        else if (node.y < viewTop - vh * 0.25) target = "asleep";
+        // Settle once its heading reaches the top of the screen, so you can
+        // watch the leaf you've just read past turn pale.
+        else if (node.y < viewTop + vh * 0.15) target = "asleep";
         else target = "awake";
         if (target === "asleep") {
           if (statesRef.current[i] !== "asleep" && pending === undefined) {

@@ -20,6 +20,9 @@
 }
 
 .contents {
-  padding-top: clamp(12px, 2vw, 20px);
+  margin-top: clamp(12px, 2vw, 18px);
+  padding: clamp(12px, 2vw, 20px);
+  border-radius: 12px;
+  background: var(--paper);
   color: var(--ink);
 }

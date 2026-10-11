@@ -13,6 +13,8 @@ export function CommandK() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // In the keyboard demo's practice area, ⌘K lights a key instead.
+      if ((e.target as Element | null)?.closest?.("[data-keyboard-practice]")) return;
       if (isPaletteHotkey(e)) {
         e.preventDefault();
         setLoaded(true);

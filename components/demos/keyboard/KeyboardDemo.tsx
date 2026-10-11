@@ -70,7 +70,7 @@ export function KeyboardDemo() {
     lit === i || (k === "⌘" && held.meta) || (k === "⇧" && held.shift) || (k === "⌥" && held.alt);
 
   return (
-    <div ref={region} className={styles.board} tabIndex={0} aria-label="Shortcut practice area. Press any twig shortcut.">
+    <div ref={region} className={styles.board} tabIndex={0} data-keyboard-practice aria-label="Shortcut practice area. Press any twig shortcut.">
       <p className={styles.say} aria-live="polite">
         {said ? (
           <>

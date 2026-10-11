@@ -1,0 +1,118 @@
+.board {
+  padding: clamp(16px, 2.4vw, 28px);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--chapter-bg) 82%, #000);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--on) 10%, transparent);
+}
+
+.board:focus-visible {
+  outline: 2px solid var(--on);
+  outline-offset: 4px;
+}
+
+.say {
+  min-height: 1.6em;
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: var(--on);
+}
+
+.sayLabel {
+  color: var(--on-muted);
+}
+
+.groups {
+  display: grid;
+  gap: 24px 32px;
+}
+
+@media (min-width: 720px) {
+  .groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .groups {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.groupName {
+  margin: 0 0 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--on) 40%, transparent);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on);
+}
+
+.group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--on) 14%, transparent);
+  transition: background-color 0.3s var(--ease-grow);
+}
+
+.row[data-lit="true"] .action {
+  color: var(--mark);
+}
+
+.caps {
+  display: inline-flex;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 96px;
+}
+
+/* A physical key: paper cap, darker skirt, travel on press. */
+.cap {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px 2px;
+  border-radius: 6px;
+  background: linear-gradient(var(--paper), color-mix(in srgb, var(--paper) 88%, var(--ink)));
+  color: var(--ink);
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow:
+    0 3px 0 color-mix(in srgb, var(--paper) 55%, var(--ink)),
+    0 4px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.08s var(--ease-grow), box-shadow 0.08s var(--ease-grow), background 0.2s;
+}
+
+.cap[data-wide="true"] {
+  font-size: 11px;
+}
+
+.cap[data-down="true"] {
+  transform: translateY(2px);
+  background: linear-gradient(var(--mark), color-mix(in srgb, var(--mark) 85%, var(--ink)));
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--mark) 55%, var(--ink)),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.action {
+  font-size: 15px;
+  color: var(--on);
+  transition: color 0.2s var(--ease-grow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cap {
+    transition: none;
+  }
+}

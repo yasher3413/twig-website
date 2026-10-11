@@ -1,0 +1,31 @@
+// twig's default shortcuts, from the app's README. Every one can be rebound.
+export type Shortcut = { keys: string[]; action: string; group: "Tabs" | "Pages" | "Remembering" | "Window" };
+
+export const SHORTCUTS: Shortcut[] = [
+  { keys: ["⌘", "T"], action: "New tab", group: "Tabs" },
+  { keys: ["⌘", "W"], action: "Close tab", group: "Tabs" },
+  { keys: ["⇧", "⌘", "T"], action: "Reopen closed tab", group: "Tabs" },
+  { keys: ["⌘", "1–9"], action: "Jump to tab", group: "Tabs" },
+  { keys: ["⇧", "⌘", "[ ]"], action: "Previous / next tab", group: "Tabs" },
+  { keys: ["⌘", "B"], action: "Toggle the tab strip", group: "Tabs" },
+  { keys: ["⌥", "⌘", "S"], action: "Snooze tab", group: "Tabs" },
+  { keys: ["⌘", "[ ]"], action: "Back / forward", group: "Pages" },
+  { keys: ["⌘", "L"], action: "Focus the address bar", group: "Pages" },
+  { keys: ["⌘", "E"], action: "Follow a link by keyboard", group: "Pages" },
+  { keys: ["⌘", "F"], action: "Find in page", group: "Pages" },
+  { keys: ["⌘", "R"], action: "Reload", group: "Pages" },
+  { keys: ["⌘", "+ − 0"], action: "Zoom in / out / reset", group: "Pages" },
+  { keys: ["⇧", "⌘", "R"], action: "Reader view", group: "Pages" },
+  { keys: ["⌘", "D"], action: "Bookmark this page", group: "Pages" },
+  { keys: ["⌘", "K"], action: "Command palette", group: "Remembering" },
+  { keys: ["⇧", "⌘", "F"], action: "Recall a passage", group: "Remembering" },
+  { keys: ["⇧", "⌘", "S"], action: "Save a checkpoint", group: "Remembering" },
+  { keys: ["⇧", "⌘", "H"], action: "Browse checkpoints", group: "Remembering" },
+  { keys: ["⌥", "⌘", "P"], action: "Package the current space", group: "Remembering" },
+  { keys: ["⇧", "⌘", "P"], action: "Research package library", group: "Remembering" },
+  { keys: ["⇧", "⌘", "O"], action: "Bookmarks", group: "Remembering" },
+  { keys: ["⌘", "Y"], action: "History", group: "Remembering" },
+  { keys: ["⇧", "⌘", "W"], action: "Close window", group: "Window" },
+  { keys: ["⇧", "⌘", "N"], action: "New private window", group: "Window" },
+  { keys: ["⌘", ","], action: "Settings", group: "Window" },
+];

@@ -16,6 +16,22 @@
   order: 2;
 }
 
+/* On phones the margin branch is gone, so each chapter carries its own
+   leaf beside its date; on desktop the branch's leaf sits there instead. */
+.whenLeaf {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 6px;
+  --leaf: var(--mark, var(--moss));
+  --twig-stem: var(--chapter-bg, var(--paper));
+}
+
+@media (min-width: 1024px) {
+  .whenLeaf {
+    display: none;
+  }
+}
+
 .entryTitle {
   order: 1;
   max-width: 16ch;

@@ -13,7 +13,7 @@ import { NightChapters } from "@/components/chapters/NightChapters";
 import { OpenSourceChapter } from "@/components/chapters/OpenSourceChapter";
 import { CloseChapter } from "@/components/chapters/CloseChapter";
 import { getReleases, getRepo } from "@/lib/github";
-import { pageMeta, baseUrl } from "@/lib/seo";
+import { pageMeta, baseUrl, safeJsonLd } from "@/lib/seo";
 import { DOWNLOAD_URL, REPO_URL } from "@/lib/links";
 
 export const metadata: Metadata = pageMeta({
@@ -42,7 +42,7 @@ export default async function Home() {
   };
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }} />
       <BranchProvider>
         <Hero latest={latest} />
         <SleepingChapter />

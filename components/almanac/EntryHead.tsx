@@ -1,4 +1,5 @@
 import styles from "./almanac.module.css";
+import { Leaf } from "./Leaf";
 
 // Literal class names so Tailwind can see them.
 const SIZE = { xl: "display-xl", lg: "display-lg", md: "display-md" } as const;
@@ -21,6 +22,7 @@ export function EntryHead({
   return (
     <div className={styles.entry}>
       <p className={`${styles.when} tnum`} data-node-anchor>
+        <Leaf size={18} className={styles.whenLeaf} />
         {when}
       </p>
       <Tag id={id} className={`${styles.entryTitle} ${SIZE[size]}`}>

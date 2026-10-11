@@ -53,15 +53,22 @@ function measure(host: HTMLElement): Geometry | null {
   const y0 = Math.max(0, nodes[0].y - 40);
   const last = nodes[nodes.length - 1];
   const yEnd = Math.min(height - 8, last.y + 220);
+  // A growing stem, not a rule: between nodes it leans out and back like a
+  // real shoot, with a knuckle at every node.
   let d = `M ${nodes[0].x} ${y0}`;
   let px = nodes[0].x;
   let py = y0;
-  for (const n of [...nodes, { x: 34, y: yEnd } as Node]) {
+  const targets = [...nodes.map((n) => ({ x: n.x, y: n.y })), { x: 34, y: yEnd }];
+  targets.forEach((n, i) => {
     const dy = n.y - py;
-    d += ` C ${px} ${py + dy * 0.45}, ${n.x} ${n.y - dy * 0.45}, ${n.x} ${n.y}`;
+    const lean = i % 2 === 0 ? 13 : -11;
+    const mx = (px + n.x) / 2 + lean;
+    const my = py + dy / 2;
+    d += ` C ${px} ${py + dy * 0.22}, ${mx} ${my - dy * 0.2}, ${mx} ${my}`;
+    d += ` S ${n.x} ${n.y - dy * 0.22}, ${n.x} ${n.y}`;
     px = n.x;
     py = n.y;
-  }
+  });
   // Hard colour stops at section edges so the stem always reads on its field.
   const stops: { offset: number; color: string }[] = [];
   sections.forEach((s, i) => {
@@ -235,13 +242,15 @@ function BranchSvg({ hostRef, forked, heroLeaves }: { hostRef: React.RefObject<H
         return (
           <g key={node.id} transform={`translate(${node.x} ${node.y})`} style={{ color: node.mark }}>
             {node.kind === "fork" && (
-              <g className={styles.fork} data-forked={forked || reduced}>
-                <path d="M0 0 C 8 18, 18 30, 26 52" className={styles.forkStem} stroke={node.mark} />
-                <g transform="translate(26 52) scale(0.8)">
-                  <g className={styles.leaf} data-state={forked || reduced ? "awake" : "bud"}>
+              <g className={styles.fork} data-forked={s !== "bud" || reduced}>
+                <path d="M0 0 C 10 14, 22 22, 30 44 S 36 70, 34 86" className={styles.forkStem} stroke={node.mark} />
+                <g transform="translate(30 44) scale(-0.8 0.8)">
+                  <g className={styles.leaf} data-state={s === "bud" && !reduced ? "bud" : "awake"}>
                     <path d={LEAF_UP} className={styles.leafBody} />
                   </g>
                 </g>
+                <circle cx="34" cy="86" r={forked ? 5.5 : 0} className={styles.forkBud} />
+                {forked && <circle cx="32.6" cy="84.6" r="1.8" className={styles.budLight} />}
               </g>
             )}
             <g transform={`scale(${node.side * 1.25} 1.25)`}>
@@ -250,7 +259,7 @@ function BranchSvg({ hostRef, forked, heroLeaves }: { hostRef: React.RefObject<H
                 <path d={LEAF_VEIN} className={styles.leafVein} />
               </g>
             </g>
-            <circle r={node.kind === "bud" || node.kind === "fork" ? 5.5 : 3.2} className={styles.bud} data-state={s} />
+            <circle r={node.kind === "bud" || node.kind === "fork" ? 5.5 : 4} className={styles.bud} data-state={s} />
             {(node.kind === "bud" || node.kind === "fork") && <circle r="1.8" cx="-1.4" cy="-1.4" className={styles.budLight} />}
           </g>
         );

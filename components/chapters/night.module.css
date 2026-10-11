@@ -87,29 +87,18 @@
 }
 
 .fact {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-top: 1.8em !important;
-  padding-top: 18px;
+  margin-top: 1.6em !important;
+  padding: 14px 0;
   border-top: 1px solid color-mix(in srgb, var(--forest-ink) 25%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--forest-ink) 25%, transparent);
 }
 
-.factNum {
-  font-family: var(--font-display);
-  font-size: clamp(44px, 4.6vw, 72px);
-  line-height: 1;
-  letter-spacing: -0.02em;
+.fact strong {
+  font-weight: 600;
   color: var(--mark);
-  white-space: nowrap;
 }
 
-.factText {
-  font-size: 15px;
-  color: var(--forest-muted);
-}
-
-.factText a {
+.fact a {
   color: var(--forest-ink);
 }
 

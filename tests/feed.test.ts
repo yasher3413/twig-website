@@ -12,9 +12,10 @@ describe("atom feed", () => {
   it("is an atom feed", () => expect(xml).toContain('<feed xmlns="http://www.w3.org/2005/Atom">'));
   it("has one entry per release", () => expect(xml.match(/<entry>/g)?.length).toBe(2));
   it("uses the release url as the entry id", () => expect(xml).toContain("<id>https://github.com/yasher3413/twig/releases/tag/v0.1.3</id>"));
-  it("escapes markup in bodies", () => {
+  it("drops raw HTML from bodies and escapes the rest", () => {
     expect(xml).not.toContain("<script>");
-    expect(xml).toContain("&lt;script&gt;");
+    expect(xml).not.toContain("&lt;script&gt;");
+    expect(xml).toContain("Fixes");
     expect(xml).toContain("&amp;");
   });
   it("feed updated is the newest release date", () => expect(xml).toContain("<updated>2026-09-30T04:42:28Z</updated>"));

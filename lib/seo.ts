@@ -8,6 +8,12 @@ export function baseUrl(): string {
   return "http://localhost:3000";
 }
 
+/** JSON for a <script type="application/ld+json">, with < escaped so no
+ *  value can close the script element. */
+export function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 export function pageMeta({ title, description, path }: { title?: string; description: string; path: string }): Metadata {
   return {
     ...(title ? { title } : {}),

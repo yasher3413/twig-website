@@ -21,9 +21,11 @@ export function detectPlatform({ ua, platform, arch, webglRenderer, maxTouchPoin
   if (isMac) {
     // iPadOS asks for desktop sites with a Mac user agent; touch gives it away.
     if ((maxTouchPoints ?? 0) > 1) return "ios";
+    // Check the GPU first: Chrome running under Rosetta reports x86 on an
+    // Apple silicon Mac, but its renderer still names the Apple M chip.
+    if (webglRenderer && /Apple M\d/.test(webglRenderer)) return "mac-arm";
     if (arch === "arm") return "mac-arm";
     if (arch === "x86") return "mac-intel";
-    if (webglRenderer && /Apple M\d/.test(webglRenderer)) return "mac-arm";
     return "mac-unknown";
   }
   if (/Windows/.test(ua)) return "windows";

@@ -11,6 +11,20 @@ describe("releases", () => {
     expect(r[0].dmgSize).toBeGreaterThan(1_000_000);
     expect(r.map((x) => x.version)).toEqual(["0.1.3", "0.1.2", "0.1.1", "0.1.0"]);
   });
+  it("in production at runtime, a failed fetch throws so the last good page is kept", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("offline")));
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PHASE", "phase-production-server");
+    await expect(getReleases()).rejects.toThrow();
+    vi.unstubAllEnvs();
+  });
+  it("at build time, a failed fetch uses the snapshot", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("offline")));
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PHASE", "phase-production-build");
+    expect((await getReleases())[0].version).toBe("0.1.3");
+    vi.unstubAllEnvs();
+  });
   it("falls back to the snapshot when the API fails", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("offline")));
     expect((await getReleases())[0].version).toBe("0.1.3");

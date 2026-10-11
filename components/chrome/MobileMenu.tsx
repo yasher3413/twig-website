@@ -35,7 +35,7 @@ export function MobileMenu({ links }: { links: { href: string; label: string }[]
           <ul className={styles.sheetList}>
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className={styles.sheetLink}>
+                <Link href={l.href} className={styles.sheetLink} onClick={() => setOpen(false)}>
                   {l.label}
                   <Icon name="chevron" size={18} />
                 </Link>

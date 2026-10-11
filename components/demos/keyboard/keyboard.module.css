@@ -73,24 +73,23 @@
   min-width: 96px;
 }
 
-/* A physical key: paper cap, darker skirt, travel on press. */
+/* Keys printed flat, like the rest of the almanac: a paper fill and a
+   hairline. Pressing one fills it with the chapter's mark colour. */
 .cap {
   display: inline-grid;
   place-items: center;
   min-width: 28px;
   height: 28px;
-  padding: 0 6px 2px;
+  padding: 0 6px;
   border-radius: 6px;
-  background: linear-gradient(var(--paper), color-mix(in srgb, var(--paper) 88%, var(--ink)));
+  border: 1px solid color-mix(in srgb, var(--on) 30%, transparent);
+  background: var(--paper);
   color: var(--ink);
   font-family: -apple-system, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 1;
-  box-shadow:
-    0 3px 0 color-mix(in srgb, var(--paper) 55%, var(--ink)),
-    0 4px 6px rgba(0, 0, 0, 0.25);
-  transition: transform 0.08s var(--ease-grow), box-shadow 0.08s var(--ease-grow), background 0.2s;
+  transition: background-color 0.12s var(--ease-grow), color 0.12s var(--ease-grow), border-color 0.12s var(--ease-grow);
 }
 
 .cap[data-wide="true"] {
@@ -98,11 +97,9 @@
 }
 
 .cap[data-down="true"] {
-  transform: translateY(2px);
-  background: linear-gradient(var(--mark), color-mix(in srgb, var(--mark) 85%, var(--ink)));
-  box-shadow:
-    0 1px 0 color-mix(in srgb, var(--mark) 55%, var(--ink)),
-    0 1px 2px rgba(0, 0, 0, 0.25);
+  background: var(--mark);
+  border-color: var(--mark);
+  color: #23261f;
 }
 
 .action {

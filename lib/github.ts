@@ -62,13 +62,22 @@ async function fetchJson(url: string): Promise<unknown> {
   return res.json();
 }
 
-/** Newest first. Never throws: any failure falls back to the committed snapshot. */
+// The snapshot keeps builds and local development working without GitHub.
+// At runtime in production a failure throws instead, so ISR keeps serving
+// the last good page rather than rolling the version back to the snapshot.
+function snapshotAllowed(): boolean {
+  return process.env.NODE_ENV !== "production" || process.env.NEXT_PHASE === "phase-production-build";
+}
+
+/** Newest first. */
 export async function getReleases(): Promise<Release[]> {
   try {
     const live = parseReleases(await fetchJson(`${API}/releases?per_page=50`));
-    return live.length ? live : SNAPSHOT;
-  } catch {
-    return SNAPSHOT;
+    if (live.length) return live;
+    throw new Error("GitHub returned no releases");
+  } catch (e) {
+    if (snapshotAllowed()) return SNAPSHOT;
+    throw e;
   }
 }
 

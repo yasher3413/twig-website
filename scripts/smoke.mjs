@@ -69,6 +69,24 @@ for (const reduced of [false, true]) {
   await p.keyboard.press("Escape");
   await p.close();
 }
+// The sitemap lists every docs page, not just /docs.
+{
+  const xml = await (await fetch(base + "/sitemap.xml")).text();
+  for (const slug of ["getting-started", "recall", "research-packages", "troubleshooting"]) {
+    if (!xml.includes(`/docs/${slug}</loc>`)) fails.push(`sitemap: missing /docs/${slug}`);
+  }
+}
+// The mobile menu closes when you tap a link to the page you're already on.
+{
+  const p = await b.newPage({ viewport: { width: 375, height: 812 } });
+  await p.goto(base + "/download", { waitUntil: "load" });
+  await p.getByRole("button", { name: "Open menu" }).click();
+  await p.waitForTimeout(300);
+  await p.locator("dialog[open] a", { hasText: "Download" }).click();
+  await p.waitForTimeout(400);
+  if (await p.locator("dialog[open]").count()) fails.push("mobile menu: stays open after tapping a link to the current page");
+  await p.close();
+}
 await b.close();
 if (fails.length) {
   console.log("FAILURES:\n" + fails.join("\n"));

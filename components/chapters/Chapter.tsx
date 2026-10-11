@@ -37,6 +37,7 @@ export function Chapter({
   layout = "split",
   intro,
   demo,
+  lead,
   source,
   children,
 }: {
@@ -48,6 +49,8 @@ export function Chapter({
   layout?: "split" | "wide" | "split-reverse";
   intro: React.ReactNode;
   demo?: React.ReactNode;
+  /** An almanac device between the heading and the body. */
+  lead?: React.ReactNode;
   source?: { href: string; label: string };
   children?: React.ReactNode;
 }) {
@@ -64,6 +67,7 @@ export function Chapter({
         <EntryHead when={when} id={`${id}-title`}>
           {title}
         </EntryHead>
+        {lead}
         <div className={`${styles.body} ${styles[layout]}`}>
           <div className={styles.text}>
             {intro}

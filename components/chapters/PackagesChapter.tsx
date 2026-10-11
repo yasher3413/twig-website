@@ -1,5 +1,6 @@
 import { Chapter } from "./Chapter";
 import { LazyPackages } from "@/components/demos/lazy";
+import { Packet } from "@/components/almanac/Packet";
 
 export function PackagesChapter() {
   return (
@@ -18,7 +19,18 @@ export function PackagesChapter() {
           <p className="muted">There&apos;s no upload service. You choose how to send the file. Cookies, form contents and private windows are never included.</p>
         </>
       }
-      demo={<LazyPackages />}
+      demo={
+        <Packet
+          band={
+            <>
+              <span>Research package · Coast trip</span>
+              <span>Format version 1 · .twig, Markdown, HTML</span>
+            </>
+          }
+        >
+          <LazyPackages />
+        </Packet>
+      }
       source={{ href: "/docs/research-packages", label: "The package format" }}
     />
   );

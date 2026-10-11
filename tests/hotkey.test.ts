@@ -17,5 +17,6 @@ describe("palette hotkey", () => {
   it("plain k never opens (typing in inputs)", () => expect(isPaletteHotkey(k({}))).toBe(false));
   it("⇧⌘K does not open", () => expect(isPaletteHotkey(k({ key: "K", metaKey: true, shiftKey: true }))).toBe(false));
   it("⌥⌘K does not open", () => expect(isPaletteHotkey(k({ metaKey: true, altKey: true }))).toBe(false));
+  it("⌘K on a non-Latin layout (physical K key) opens", () => expect(isPaletteHotkey({ ...k({ key: "л", metaKey: true }), code: "KeyK" })).toBe(true));
   it("other letters with ⌘ do not open", () => expect(isPaletteHotkey(k({ key: "l", metaKey: true }))).toBe(false));
 });

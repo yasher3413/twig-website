@@ -18,7 +18,7 @@ export function NightChapters({ latest }: { latest: Release }) {
       <Chapter
         id="local"
         field="forest"
-        when="On your Mac, only"
+        when="Every hour of every day"
         title="Everything stays on your Mac."
         intro={
           <>
@@ -68,7 +68,7 @@ export function NightChapters({ latest }: { latest: Release }) {
       <Chapter
         id="engine"
         field="forest"
-        when="Under the bark"
+        when="From the first launch"
         title="Built on your Mac's own engine."
         layout="split-reverse"
         intro={
@@ -83,13 +83,11 @@ export function NightChapters({ latest }: { latest: Release }) {
             </p>
             {latest.dmgSize && (
               <p className={styles.fact}>
-                <span className={`${styles.factNum} tnum`}>{formatBytes(latest.dmgSize)}</span>
-                <span className={styles.factText}>
-                  The whole download for twig {latest.version}.{" "}
-                  <a href={latest.url} rel="noopener">
-                    See the release
-                  </a>
-                </span>
+                The whole download for twig {latest.version} is <strong className="tnum">{formatBytes(latest.dmgSize)}</strong>, because there&apos;s no engine
+                inside it.{" "}
+                <a href={latest.url} rel="noopener">
+                  See the release
+                </a>
               </p>
             )}
           </>

@@ -34,12 +34,12 @@ The link, smoke and screenshot scripts need a running server (`npm run build && 
 The version, release dates, DMG size and release notes come from the GitHub Releases API (`api.github.com/repos/yasher3413/twig/releases`):
 
 - Pages that use them revalidate **every hour** (ISR), so a new release appears within an hour without a redeploy. Redeploying shows it immediately.
-- If the API fails or rate-limits, the site falls back to [`content/releases.snapshot.json`](content/releases.snapshot.json), so builds never break. Refresh the snapshot after a release:
+- If the API fails **during a build** (or in local development), the site uses [`content/releases.snapshot.json`](content/releases.snapshot.json), so builds never break. If it fails **at runtime** in production, the hourly revalidation is skipped and the last good page keeps being served, so the version never rolls back. Refresh the snapshot after a release:
 
   ```sh
   curl -s https://api.github.com/repos/yasher3413/twig/releases > content/releases.snapshot.json
   ```
-- Set `GITHUB_TOKEN` in Vercel only if you hit the API rate limit; it isn't required.
+- Optional but recommended: set `GITHUB_TOKEN` (a token with no scopes is enough) as a Vercel environment variable for Production. Vercel's IP addresses are shared, so unauthenticated requests can hit GitHub's rate limit; a token raises it.
 - The download link never needs updating: `releases/latest/download/twig-macos-arm64.dmg` always serves the newest build, as long as each release attaches an asset with exactly that name.
 - The Atom feed is at `/releases/feed.xml`.
 

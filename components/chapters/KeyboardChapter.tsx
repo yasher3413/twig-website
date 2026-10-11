@@ -6,7 +6,7 @@ export function KeyboardChapter() {
     <Chapter
       id="keyboard"
       field="slate"
-      when="Without lifting your hands"
+      when="Hundreds of times a day"
       title="Every shortcut is yours to change."
       layout="wide"
       intro={

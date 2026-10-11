@@ -11,5 +11,8 @@ describe("renderMarkdown", () => {
   it("drops event handler attributes", () => expect(renderMarkdown('<img src="x" onerror="alert(1)">')).not.toMatch(/onerror/i));
   it("neutralises javascript: links", () => expect(renderMarkdown("[x](javascript:alert(1))")).not.toMatch(/javascript:/i));
   it("external links open safely", () => expect(renderMarkdown("[gh](https://github.com)")).toContain('rel="noopener"'));
+  it("neutralises unquoted javascript: hrefs", () => expect(renderMarkdown("<a href=javascript:alert(1)>x</a>")).not.toMatch(/javascript:/i));
+  it("neutralises entity-encoded javascript: hrefs", () => expect(renderMarkdown('<a href="jav&#x61;script:alert(1)">x</a>')).not.toMatch(/jav(&#x61;|a)script/i));
+  it("neutralises entity-encoded markdown link targets", () => expect(renderMarkdown("[x](jav&#x61;script:alert(1))")).not.toMatch(/href="[^"]*script:/i));
   it("drops iframes", () => expect(renderMarkdown('<iframe src="https://evil.example"></iframe>')).not.toMatch(/<iframe/i));
 });

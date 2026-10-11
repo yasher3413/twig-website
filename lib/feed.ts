@@ -1,4 +1,4 @@
-import { marked } from "marked";
+import { releaseBodyHtml } from "./markdown";
 import type { Release } from "./github";
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -7,7 +7,7 @@ export function buildAtom(releases: Release[], baseUrl: string): string {
   const updated = releases[0]?.date ?? new Date(0).toISOString();
   const entries = releases
     .map((r) => {
-      const html = marked.parse(r.body || "", { async: false, gfm: true }) as string;
+      const html = releaseBodyHtml(r.body);
       return `  <entry>
     <title>${esc(r.name)}</title>
     <id>${esc(r.url)}</id>

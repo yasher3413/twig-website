@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageIntro } from "@/components/page/PageIntro";
 import { DownloadButton } from "@/components/chrome/DownloadButton";
 import { getReleases } from "@/lib/github";
-import { renderMarkdown } from "@/lib/markdown";
+import { releaseBodyHtml } from "@/lib/markdown";
 import { formatBytes, formatDate, versionAnchor } from "@/lib/format";
 import { pageMeta } from "@/lib/seo";
 import styles from "./releases.module.css";
@@ -14,15 +14,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/releases", types: { "application/atom+xml": "/releases/feed.xml" } },
 };
 
-// Strip the first line of each GitHub body (the download link and chip
-// requirement) and the repeated First launch section: the site covers
-// both once, on the download page.
-function body(md: string) {
-  return md
-    .replace(/^\*\*\[Download[^\n]*\n+/, "")
-    .replace(/\n#{2,3} First launch\n[\s\S]*?(?=\n#{2,3} |$)/, "")
-    .trim();
-}
 
 export default async function ReleasesPage() {
   const releases = await getReleases();
@@ -48,7 +39,7 @@ export default async function ReleasesPage() {
             </p>
             <DownloadButton version={latest.version} size="md" />
           </div>
-          <div className={styles.prose} dangerouslySetInnerHTML={{ __html: renderMarkdown(body(latest.body)) }} />
+          <div className={styles.prose} dangerouslySetInnerHTML={{ __html: releaseBodyHtml(latest.body) }} />
         </div>
       </article>
 
@@ -67,7 +58,7 @@ export default async function ReleasesPage() {
                   </a>
                 </p>
               </div>
-              <div className={styles.prose} dangerouslySetInnerHTML={{ __html: renderMarkdown(body(r.body)) }} />
+              <div className={styles.prose} dangerouslySetInnerHTML={{ __html: releaseBodyHtml(r.body) }} />
             </div>
           </article>
         ))}

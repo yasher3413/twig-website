@@ -1,0 +1,25 @@
+.packet {
+  position: relative;
+  padding: 0 clamp(12px, 2vw, 24px) clamp(12px, 2vw, 24px);
+  border-radius: 8px 8px 18px 18px;
+  background: var(--f-plum);
+  color: var(--on-plum);
+  box-shadow: var(--shadow-raise);
+}
+
+.band {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 14px 4px 12px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--on-plum) 50%, transparent);
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.contents {
+  padding-top: clamp(12px, 2vw, 20px);
+  color: var(--ink);
+}

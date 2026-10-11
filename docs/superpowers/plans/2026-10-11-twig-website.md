@@ -27,7 +27,7 @@
   - dark: paper `#17190f`, surface `#1c1f13`, strip `#101208`, ink `#e9e7dd`, muted `#9a9c8d`, moss `#8fbb6e`;
   - forest night `#101208`.
 - Fields (light): Moss `#4b6b3a`, Ocean `#2b6e7a`, Clay `#8f4a26`, Honey `#e0b24d` (ink text), Plum `#6b4a82`, Slate `#52564c`.
-- Fonts: Young Serif (display, from `/Users/yash/twig-browser/src/assets/fonts/YoungSerif-Regular.woff2`) and Libre Franklin (variable, text). Both self-hosted.
+- Fonts: Young Serif (display, from `/Users/yash/twig-browser/src/assets/fonts/YoungSerif-Regular.woff2`) and Public Sans (variable, text). Both self-hosted.
 - Easing: `--ease-grow: cubic-bezier(0.22,1,0.36,1)`, `--ease-unfurl: cubic-bezier(0.16,1,0.3,1)`, `--ease-settle: cubic-bezier(0.33,0,0.15,1)`, `--ease-drift: cubic-bezier(0.45,0,0.55,1)`.
 - Animate only transform, opacity and stroke-dashoffset. `prefers-reduced-motion` gives a composed static end state.
 - Copy: calm, warm, precise. Banned words: revolutionary, blazing-fast, game-changing, supercharge, seamless. Lowercase "twig".

@@ -98,13 +98,14 @@ twig is a browser about time. A tab sleeps **after 10 minutes**. A snoozed tab c
   - Leading 0.95–1.0 at display sizes.
   - Hanging punctuation via `hanging-punctuation: first` where supported, with a negative text-indent fallback for opening quotes.
   - Subset: Latin plus punctuation. Glyph coverage is checked for `’ “ ” — · …`.
-- **Text and UI: Libre Franklin** (variable, SIL OFL), self-hosted, subset, `font-display: swap`.
-  - *Why:* Franklin Gothic is the workhorse grotesque of American seed catalogues, packets and almanacs, so it's the face this world actually printed in. It sets crisp UI at small sizes, has true tabular figures (time rulers, shortcut tables, versions) and real small caps.
+- **Text and UI: Public Sans** (variable, SIL OFL), self-hosted, subset, `font-display: swap`.
+  - *Why:* it's derived from Libre Franklin, so it carries Franklin Gothic's lineage, the workhorse grotesque of American seed catalogues and almanacs. Unlike Google's Libre Franklin (checked: proportional digits, no `tnum`), it has real tabular, old-style and lining figures for time rulers, shortcut tables and versions.
+  - It has no true small caps, and the spec doesn't fake them.
   - It isn't Inter, and it isn't on impeccable's overused list.
   - Keycap glyphs (⌘ ⇧ ⌥) fall back to the system font, as in the app.
 - **App recreations use the app's own stack** (`-apple-system, Inter, …`, 13 px), so demos stay indistinguishable from twig.
 - **Scale:** fluid with `clamp()`, ratio ≈ 1.333 on mobile and ≈ 1.5 on desktop. Hero display tops out at about 168 px at 1920 px and is 52 px at 375 px.
-- **Almanac entry heads** (the "when" line on each chapter) are set in Libre Franklin small caps with tabular figures above a printed rule. This deliberately avoids the overused tracked-mono kicker.
+- **Almanac entry heads** (the "when" line on each chapter) are set in Public Sans medium, sentence case, with tabular figures, above a printed hairline rule and beside a small leaf mark. This deliberately avoids both the overused tracked-mono kicker and faked small caps.
 
 ### 3.5 The symbol set (one vocabulary, used identically everywhere)
 *Raised from the declined Toyism challenger.*
@@ -221,7 +222,7 @@ Each chapter has an **almanac entry head** (the "when"), a short Young Serif lin
 - **Feed:** Atom at `/releases/feed.xml`.
 
 ### 5.4 Docs (`/docs`), Read mode
-- **Fumadocs**, fully re-skinned: paper ground, Libre Franklin body at 17 px with 1.65 line height and a 68ch measure, Young Serif page titles, moss links, almanac-ruled tables, and copy buttons.
+- **Fumadocs**, fully re-skinned: paper ground, Public Sans body at 17 px with 1.65 line height and a 68ch measure, Young Serif page titles, moss links, almanac-ruled tables, and copy buttons.
 - **Search:** Fumadocs' built-in local search (Orama, static index). The site's ⌘K also searches docs.
 - **The 15 pages from brief §3.4:**
   1. Getting started
@@ -341,7 +342,7 @@ scripts/
 - The living window is SSR-rendered in its first frame, and the animation hydrates later.
 - Every chapter demo is code-split and mounts within 1 viewport of view.
 - Initial home-page JS target: ≤ 120 KB gzip.
-- Fonts subset to Latin. Young Serif is about 30 KB and Libre Franklin variable about 45 KB subset.
+- Fonts subset to Latin. Young Serif is 19 KB and Public Sans variable 26 KB subset (measured).
 - Grain is a single tile.
 - Lighthouse runs on preview deploys at milestone 9 and on every page type.
 
@@ -390,7 +391,7 @@ A null value renders a designed blank (§3.7.4), never a broken link.
 |---|---|---|
 | D1 | Art direction: The Gardener's Almanac | Chosen by the owner, 2026-10-11 |
 | D2 | Domain: Vercel URL; donations: GitHub Sponsors (soon state); analytics: Vercel Web Analytics; email: none yet; photo: none; bio: drafted by Claude from facts, marked draft; socials and Discord: pending | Owner answers to §9 |
-| D3 | Body face: Libre Franklin | Grounded in the world's print history. Tabular figures, small caps. Not a default. |
+| D3 | Body face: Public Sans (replaced Libre Franklin on 2026-10-11 during build) | Franklin lineage through Libre Franklin. Real `tnum`. Inspecting the Google Libre Franklin file showed no tabular figures or small caps. |
 | D4 | No WebGL. Static grain and SVG only. | Performance budget. The effect doesn't need a GPU. |
 | D5 | Home: 11 chapters plus hero and close (problem merged into sleeping tabs; packages beside checkpoints) | Problem and answer share one demo, and features sit in their real relationship. |
 | D6 | Demos are re-implemented, not imported from the app (approach A) | Bundle size, SSR, no Tauri coupling |

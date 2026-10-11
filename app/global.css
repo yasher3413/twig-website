@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+/* twig's tokens. The light and dark values mirror the app's src/App.css so
+   the site and the browser read as one object; field colours are the app's
+   six accent swatches, adjusted only where AA contrast demanded it (spec §3.3). */
+:root {
+  --paper: #f6f4ee;
+  --surface: #f6f4ee;
+  --strip: #e8e5d8;
+  --ink: #23261f;
+  --muted: #62665a;
+  --moss: #4b6b3a;
+  --moss-tint: rgba(75, 107, 58, 0.12);
+  --border: rgba(35, 38, 31, 0.08);
+  --border-strong: rgba(35, 38, 31, 0.16);
+  --rule: rgba(35, 38, 31, 0.22);
+  --field: rgba(35, 38, 31, 0.05);
+  --row-hover: rgba(35, 38, 31, 0.045);
+  --shadow-raise: 0 1px 2px rgba(35, 38, 31, 0.1), 0 4px 12px rgba(35, 38, 31, 0.07);
+  --shadow-pop: 0 8px 16px rgba(35, 38, 31, 0.1), 0 24px 48px rgba(35, 38, 31, 0.16);
+  --sun: rgba(255, 246, 214, 0.55);
+
+  --forest: #101208;
+  --forest-ink: #e9e7dd;
+  --forest-muted: #a3a594;
+  --moon: rgba(214, 228, 190, 0.16);
+
+  /* Chapter fields: background, text on it, and a strong mark colour. */
+  --f-moss: #4b6b3a;   --on-moss: #f6f4ee;   --mark-moss: #c9e0b4;
+  --f-ocean: #2b6e7a;  --on-ocean: #f6f4ee;  --mark-ocean: #bfe3e8;
+  --f-clay: #8f4a26;   --on-clay: #f6f4ee;   --mark-clay: #f3cdb3;
+  --f-honey: #e0b24d;  --on-honey: #23261f;  --mark-honey: #5a4210;
+  --f-plum: #6b4a82;   --on-plum: #f6f4ee;   --mark-plum: #e2d0ef;
+  --f-slate: #52564c;  --on-slate: #f6f4ee;  --mark-slate: #dfe1d6;
+
+  --ease-grow: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-unfurl: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-settle: cubic-bezier(0.33, 0, 0.15, 1);
+  --ease-drift: cubic-bezier(0.45, 0, 0.55, 1);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --measure: 68ch;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17190f;
+    --surface: #1c1f13;
+    --strip: #101208;
+    --ink: #e9e7dd;
+    --muted: #9a9c8d;
+    --moss: #8fbb6e;
+    --moss-tint: rgba(143, 187, 110, 0.18);
+    --border: rgba(233, 231, 221, 0.09);
+    --border-strong: rgba(233, 231, 221, 0.2);
+    --rule: rgba(233, 231, 221, 0.24);
+    --field: rgba(233, 231, 221, 0.07);
+    --row-hover: rgba(233, 231, 221, 0.06);
+    --shadow-raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-pop: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.55);
+    --sun: rgba(214, 228, 190, 0.08);
+    --forest: #0b0d05;
+    --f-moss: #243320;   --on-moss: #e9e7dd;   --mark-moss: #8fbb6e;
+    --f-ocean: #1a3236;  --on-ocean: #e9e7dd;  --mark-ocean: #6fb8c4;
+    --f-clay: #3a2518;   --on-clay: #e9e7dd;   --mark-clay: #d98f5f;
+    --f-honey: #3a3015;  --on-honey: #e9e7dd;  --mark-honey: #e0b24d;
+    --f-plum: #2f2537;   --on-plum: #e9e7dd;   --mark-plum: #b58fd1;
+    --f-slate: #2a2c25;  --on-slate: #e9e7dd;  --mark-slate: #9a9e8f;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #17190f;
+  --surface: #1c1f13;
+  --strip: #101208;
+  --ink: #e9e7dd;
+  --muted: #9a9c8d;
+  --moss: #8fbb6e;
+  --moss-tint: rgba(143, 187, 110, 0.18);
+  --border: rgba(233, 231, 221, 0.09);
+  --border-strong: rgba(233, 231, 221, 0.2);
+  --rule: rgba(233, 231, 221, 0.24);
+  --field: rgba(233, 231, 221, 0.07);
+  --row-hover: rgba(233, 231, 221, 0.06);
+  --shadow-raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-pop: 0 8px 16px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.55);
+  --sun: rgba(214, 228, 190, 0.08);
+  --forest: #0b0d05;
+  --f-moss: #243320;   --on-moss: #e9e7dd;   --mark-moss: #8fbb6e;
+  --f-ocean: #1a3236;  --on-ocean: #e9e7dd;  --mark-ocean: #6fb8c4;
+  --f-clay: #3a2518;   --on-clay: #e9e7dd;   --mark-clay: #d98f5f;
+  --f-honey: #3a3015;  --on-honey: #e9e7dd;  --mark-honey: #e0b24d;
+  --f-plum: #2f2537;   --on-plum: #e9e7dd;   --mark-plum: #b58fd1;
+  --f-slate: #2a2c25;  --on-slate: #e9e7dd;  --mark-slate: #9a9e8f;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-strip: var(--strip);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-moss: var(--moss);
+  --color-moss-tint: var(--moss-tint);
+  --color-rule: var(--rule);
+  --color-border: var(--border);
+  --color-forest: var(--forest);
+  --color-forest-ink: var(--forest-ink);
+  --font-display: var(--font-young-serif), "Iowan Old Style", Georgia, serif;
+  --font-text: var(--font-public-sans), -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --ease-grow: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-unfurl: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-settle: cubic-bezier(0.33, 0, 0.15, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: 88px;
+    hanging-punctuation: first;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-text);
+    font-size: 17px;
+    line-height: 1.6;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Fine paper grain over everything. A tiny static tile, multiplied, so it
+     costs no script and no GPU. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    background-image: url("/grain.webp");
+    background-size: 180px 180px;
+    opacity: 0.05;
+    mix-blend-mode: multiply;
+  }
+
+  :root[data-theme="dark"] body::before {
+    mix-blend-mode: screen;
+    opacity: 0.035;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) body::before {
+      mix-blend-mode: screen;
+      opacity: 0.035;
+    }
+  }
+
+  ::selection {
+    background: var(--moss-tint);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--moss);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img,
+  svg {
+    display: block;
+  }
+}
+
+/* Display steps: Young Serif has one master, so tracking is set per size
+   (spec §3.4). */
+@utility display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8.6vw, 168px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.6vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+@utility display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.1vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility sr-only-focusable {
+  position: absolute;
+  left: -9999px;
+  &:focus {
+    left: 16px;
+    top: 12px;
+    z-index: 200;
+  }
+}

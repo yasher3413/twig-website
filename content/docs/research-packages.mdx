@@ -1,0 +1,72 @@
+---
+title: Research packages
+description: Bundle a space's sources, notes and excerpts into one file to keep or share, and the .twig file format.
+---
+
+A research package gathers the pages from a space, in the order you want them read, with your notes and the passages you picked.
+
+## Make a package
+
+1. Press **⌥⌘P** to package the current space, or choose **Package this research** on a [checkpoint](/docs/checkpoints).
+2. Choose and reorder the sources, and add page notes and excerpts. A passage you've selected on the active page is included; selections inside editable fields are skipped.
+3. Preview exactly what will be shared.
+4. Save it to your local library, export it, or open it in a new space.
+
+## Export
+
+Exports go to your Downloads folder without overwriting existing files:
+
+- **`.twig`**: a portable file another twig can import.
+- **Markdown**: a readable document.
+- **HTML**: a standalone page that opens in any browser. It has inline styles and no scripts, remote images, fonts or tracking.
+
+There's no upload or sharing service: you choose how to send the file.
+
+## Import
+
+Open the package library with **⇧⌘P** and import a `.twig` file. twig checks and previews it without opening any of its links. Choosing **Open in a new space** saves it to your library and opens its pages in a separate space: the first page becomes active, the rest stay asleep until you use them. Imported files can't run scripts.
+
+## What's in a package
+
+Only selected HTTP(S) links, titles, dates, notes, excerpts, and an optional checkpoint name and date. Full addresses, including query strings, are included, so review them before sharing. Cookies, form contents, local-file tabs and private windows are never included.
+
+## The .twig format, version 1
+
+A `.twig` file is a UTF-8 JSON document:
+
+```json
+{
+  "format": "twig-research",
+  "version": 1,
+  "title": "Choosing a database",
+  "description": "Read the overview, then compare the deployment constraints.",
+  "createdAt": 1772323200000,
+  "pages": [
+    {
+      "url": "https://www.sqlite.org/whentouse.html",
+      "title": "Appropriate Uses For SQLite",
+      "note": "Consider this for a local application.",
+      "excerpts": ["A passage explicitly selected or added by the author."],
+      "capturedAt": 1772323200000
+    }
+  ],
+  "sourceCheckpoint": null
+}
+```
+
+Every field is required. `sourceCheckpoint` is either `null` or an object with `name` and `createdAt`. Unknown fields and unsupported versions are rejected rather than silently dropped. Dates are non-negative Unix milliseconds. Capture dates say when sources were collected into the package, not when the websites published them.
+
+| Field | Limit |
+| --- | --- |
+| File / normalised package | 2 MiB |
+| Pages | 1–200, in reading order |
+| Package title / checkpoint name | 1–120 characters |
+| Description / page note | 4,000 characters |
+| Page title | 500 characters |
+| Page URL | 8,192 bytes |
+| Excerpts per page | 20 |
+| Each excerpt | 8,000 characters |
+
+Addresses must use HTTP or HTTPS and can't contain usernames or passwords. Local files, inline data, script URLs and unknown protocols are rejected. Text fields can't contain control characters other than tabs and newlines.
+
+The local library holds up to 200 packages. Removing a package from it doesn't close tabs or delete files you've already exported.

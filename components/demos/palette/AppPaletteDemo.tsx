@@ -6,7 +6,7 @@ import { openPalette } from "@/components/chrome/PaletteTrigger";
 import "@/components/twig-ui/twig-ui.css";
 import styles from "./palette.module.css";
 
-type Row = { group: string; label: string; snippet?: string; detail?: string; kbd?: string; icon: "globe" | "star" | "history" | "recall" | "settings" | "moon" | "split" };
+type Row = { group: string; label: string; snippet?: string; detail?: string; kbd?: string; icon: "globe" | "star" | "history" | "recall" | "settings" | "moon" };
 const ROWS: Row[] = [
   { group: "Open tabs", label: "How to read a tide table", detail: "Current", icon: "globe" },
   { group: "Open tabs", label: "The north line, overnight", detail: "Coast trip", icon: "globe" },
@@ -15,7 +15,8 @@ const ROWS: Row[] = [
   { group: "In pages you've read", label: "Kerning, a field guide", snippet: "Round letters need to sit closer than straight ones", icon: "recall" },
   { group: "In pages you've read", label: "Ownership, borrowing and lifetimes", snippet: "many shared references or one mutable reference", icon: "recall" },
   { group: "Commands", label: "Snooze tab", kbd: "⌥⌘S", icon: "moon" },
-  { group: "Commands", label: "Split view", icon: "split" },
+  { group: "Commands", label: "Recall a passage", kbd: "⇧⌘F", icon: "recall" },
+  { group: "Commands", label: "Show what changed", icon: "history" },
   { group: "Commands", label: "Customize keyboard shortcuts", icon: "settings" },
 ];
 

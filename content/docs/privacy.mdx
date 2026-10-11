@@ -1,0 +1,43 @@
+---
+title: Privacy and your data
+description: What twig stores, where it lives, what leaves your Mac, and how to delete it.
+---
+
+twig has no account, no sync server, no telemetry and no analytics. What you browse stays on your Mac.
+
+## What's stored, and where
+
+twig keeps its data in its app data folder, `~/Library/Application Support/com.twig.browser/`, and in macOS's WebKit storage.
+
+| Data | Stored |
+| --- | --- |
+| History, bookmarks, closed tabs, snoozed tabs | A local SQLite database (`twig.db`) |
+| Recall's reading copies and full-text index | The same database (SQLite FTS5) |
+| Checkpoints | On your Mac |
+| Research package library | `research-packages.json`, on your Mac |
+| Tabs and spaces (for session restore) | On your Mac |
+| Cookies, site storage, sign-ins | macOS's WebKit storage, on your Mac |
+| Settings and shortcuts | On your Mac |
+
+## Private windows
+
+**⇧⌘N** opens a private window with a non-persistent store. Nothing it visits is added to history, indexed by Recall, captured in a checkpoint, or kept as cookies after you close it.
+
+## What leaves your Mac
+
+- **Websites you visit**, as with any browser.
+- **Your search engine** gets what you search for (Google, DuckDuckGo, Brave or Bing, your choice).
+- **Bug reports, only if you send one.** The Report a Bug form sends what you write (and, if you leave the box ticked, the twig and macOS versions) to a relay that files it as a public GitHub issue. An optional screenshot is stored publicly too. See [Reporting bugs](/docs/reporting-bugs).
+
+Exported research packages and Markdown or HTML files only go where you send them.
+
+## Deleting your data
+
+- **Settings → Data → Clear history** clears history and Recall's reading copies.
+- **Settings → Data → Clear site data** clears cookies and site storage.
+- In [Recall](/docs/recall), delete a single copy or forget every copy of a page.
+- Delete individual checkpoints and packages from their panels.
+
+To remove everything, quit twig and delete `~/Library/Application Support/com.twig.browser/`, then move twig to the Bin.
+
+This website has its own [privacy policy](/legal/privacy).

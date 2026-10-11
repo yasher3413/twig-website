@@ -28,6 +28,7 @@ function apply(choice: Choice) {
     if (choice === "system") localStorage.removeItem("theme");
     else localStorage.setItem("theme", choice);
   } catch {}
+  (window as Window & { __twigTheme?: () => void }).__twigTheme?.();
   window.dispatchEvent(new CustomEvent("twig:theme", { detail: choice }));
 }
 

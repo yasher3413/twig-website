@@ -1,0 +1,51 @@
+---
+title: Tabs and sleeping tabs
+description: How twig keeps lots of tabs open without paying for all of them.
+---
+
+Most browsers keep every tab running as a full, live page, so memory grows with every tab you open. twig assumes the opposite: a tab you aren't looking at shouldn't cost you anything.
+
+## Sleeping tabs
+
+A tab you haven't looked at for **10 minutes** falls asleep. Its webview is torn down, but twig keeps its title, address and scroll position, so it wakes where you left it when you click it.
+
+Only a few tabs stay awake at once. Choose how many in **Settings → Memory**:
+
+| Setting | Awake at once |
+| --- | --- |
+| Frugal | 3 |
+| Balanced (default) | 5 |
+| Roomy | 10 |
+
+A sleeping tab shows a grey dot, and its icon and title dim.
+
+## Tabs that never sleep
+
+A tab that's busy is left alone, even if that puts you over the limit:
+
+- it has text you've typed but not sent;
+- it's playing audio or video;
+- it's using your camera or microphone.
+
+## Tabs that cost nothing
+
+A new tab holds no webview until you load something in it, and neither does a restored one. Reopening a few hundred tabs after a restart costs about what reopening one does.
+
+## The memory readout
+
+**Settings → Memory** shows a live ledger:
+
+- **in use**: what twig is using now;
+- **awake** and **asleep**: how many tabs are in each state;
+- **not spent**: an estimate of what the sleeping tabs would cost if they were awake, at the current average.
+
+## Closing tabs
+
+Closed tabs are archived and searchable in **Library → Closed**, not just reopenable with ⇧⌘T. Pages you read are also kept by [Recall](/docs/recall), so closing a tab doesn't mean losing it.
+
+## Other tab basics
+
+- Drag tabs to reorder them.
+- **⌘1–⌘9** jumps to a tab; **⇧⌘[** and **⇧⌘]** move between them.
+- **⌘B** hides or shows the tab strip.
+- Per-site zoom is remembered across restarts.

@@ -1,0 +1,50 @@
+---
+title: Building from source
+description: Build twig yourself from its MIT-licensed source.
+---
+
+twig is open source under the MIT licence. The source is at [github.com/yasher3413/twig](https://github.com/yasher3413/twig).
+
+## Prerequisites
+
+- [Rust](https://www.rust-lang.org/tools/install), stable toolchain
+- [Node.js](https://nodejs.org) 18 or newer (22.13+ to run the test suite)
+- Xcode command line tools: `xcode-select --install`
+
+## Run it
+
+```sh
+git clone https://github.com/yasher3413/twig.git
+cd twig
+npm install
+npm run tauri dev
+```
+
+## Build an app
+
+```sh
+npm run tauri build
+```
+
+This produces `twig.app` and a `.dmg` under `src-tauri/target/release/bundle/`.
+
+## Checks
+
+```sh
+npm test
+npm run build
+cargo test --manifest-path src-tauri/Cargo.toml --lib
+cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets
+```
+
+## The stack
+
+- [Tauri 2](https://tauri.app) (Rust) for the app shell and a native webview per tab
+- React, TypeScript and Vite for the browser chrome
+- SQLite through `tauri-plugin-sql` for history, bookmarks, the archive and the full-text index
+
+Each tab is a separate native webview stacked above the chrome, so the chrome can't draw over a page the way a web app would. Anything that overlaps a page either slides the page down or hides it.
+
+## Contributing
+
+Read [CONTRIBUTING.md](https://github.com/yasher3413/twig/blob/main/CONTRIBUTING.md) first. Keep pull requests focused, use Conventional Commits, and open an issue before starting on anything listed as out of scope (extensions, built-in ad blocking, sync, non-macOS builds).

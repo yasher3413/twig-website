@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
 /* twig's tokens. The light and dark values mirror the app's src/App.css so
    the site and the browser read as one object; field colours are the app's
@@ -111,6 +113,39 @@
   --f-plum: #2f2537;   --on-plum: #e9e7dd;   --mark-plum: #b58fd1;
   --f-slate: #2a2c25;  --on-slate: #e9e7dd;  --mark-slate: #9a9e8f;
   color-scheme: dark;
+}
+
+/* Fumadocs, dressed in twig: its colour roles point at twig's tokens, which
+   already switch with the theme. */
+:root,
+.dark {
+  --color-fd-background: var(--paper);
+  --color-fd-foreground: var(--ink);
+  --color-fd-muted: var(--strip);
+  --color-fd-muted-foreground: var(--muted);
+  --color-fd-popover: var(--surface);
+  --color-fd-popover-foreground: var(--ink);
+  --color-fd-card: var(--surface);
+  --color-fd-card-foreground: var(--ink);
+  --color-fd-border: var(--border-strong);
+  --color-fd-primary: var(--moss);
+  --color-fd-primary-foreground: var(--paper);
+  --color-fd-secondary: var(--strip);
+  --color-fd-secondary-foreground: var(--ink);
+  --color-fd-accent: var(--moss-tint);
+  --color-fd-accent-foreground: var(--ink);
+  --color-fd-ring: var(--moss);
+  --color-fd-overlay: color-mix(in srgb, var(--forest) 30%, transparent);
+  --color-fd-info: var(--f-ocean);
+  --color-fd-warning: #a67c1d;
+  --color-fd-success: var(--moss);
+  --color-fd-idea: #a85c32;
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted: var(--strip);
+  --color-fd-secondary: var(--strip);
+  --color-fd-muted-foreground: var(--muted);
 }
 
 @theme inline {

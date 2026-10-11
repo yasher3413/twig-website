@@ -1,4 +1,5 @@
 import { fileURLToPath } from "node:url";
+import { createMDX } from "fumadocs-mdx/next";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
 
@@ -11,4 +12,6 @@ const nextConfig = {
   images: { formats: ["image/avif", "image/webp"] },
 };
 
-export default nextConfig;
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);

@@ -1,0 +1,39 @@
+---
+title: Recall
+description: Search the text of pages you've actually read, by the words you remember, and read the saved copy even if the page changes.
+---
+
+Recall searches plain-text reading copies of pages you visited in a regular twig window. Open it with **⇧⌘F**, the toolbar's Recall button, the new tab page, or ⌘K.
+
+## Searching
+
+Type words you remember. Search uses SQLite FTS5 word matching with English stemming; it doesn't interpret natural-language dates. Narrow results by **space** and by **calendar dates**: the end date includes the whole day, in your time zone. Recall shows up to 100 matching copies, so narrower dates and words help with older ones.
+
+## Reading and reopening
+
+Select a result to read its saved plain text, with your words marked. No website loads to show a saved copy, and copies contain text only: no images, scripts, cookies, form state or page markup.
+
+**Open live page at passage** opens a new tab and tries to select the passage once the site loads. It tries up to 12 times over about six seconds; redirects, rewritten text and dynamic layouts can stop it finding the spot. Your saved copy stays available either way, and your original tabs aren't replaced.
+
+**Captured around then** lists up to eight other pages from the same space and browsing session, within 30 minutes of the selected copy. It's time context, not a guess about relevance.
+
+## What's captured
+
+When a page loads, twig captures up to **40,000 characters** of its rendered text, from HTTP(S) pages without embedded credentials. Capture skips forms, editable documents and controls, scripts, styles, hidden elements, and private windows.
+
+Very large pages, embedded frames, shadow DOM and content loaded later may be captured incompletely. Recall is a reading aid, not a full archive of a website. Text you can see while signed in can be captured, so use a private window when you don't want page text saved.
+
+## Limits
+
+- Up to **2,000** saved copies. When full, new captures pause (Recall shows a notice) and existing copies stay; nothing is evicted automatically.
+- An identical address, title and text in the same space within 15 minutes counts as a duplicate, and keeps its original time.
+- Changed versions of a page are kept separately, each with its own date.
+
+## Forgetting
+
+- **Delete this copy** removes only the selected dated copy.
+- **Forget this page** removes every saved copy of that exact address.
+- Deleting a history entry also removes all reading copies for its address.
+- **Settings → Data → Clear history** clears history and Recall copies together.
+
+Deletion updates the search index and rejects late captures from before it, so a pending capture can't bring forgotten text back. This is deletion from SQLite, not forensic erasure. Open tabs, bookmarks, checkpoints and saved research packages are kept.

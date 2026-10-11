@@ -1,0 +1,30 @@
+---
+title: Changes since you last read
+description: When a page you've read changes, twig shows what's different, in a panel beside the page.
+---
+
+When a page you've read before loads again, twig compares its text with your most recent saved copy, from any space, before saving the new one. If paragraphs were added, removed or rewritten, a **Changed · date** chip appears in the address bar.
+
+Click the chip, or use ⌘K → *Show what changed*, to see the differences in a panel beside the page:
+
+- **added** paragraphs are tinted;
+- **removed** ones are struck through;
+- **edited** ones show the words that changed inside them.
+
+You can also compare against any older copy of the page, or open it in [Recall](/docs/recall).
+
+## When the chip stays quiet
+
+twig ignores changes that aren't really changes. The chip doesn't appear when:
+
+- the only differences are relative times, counters, dates or clock times ("3 hours ago", "1.2k views", "12 min read", "Sep 12");
+- your saved copy is less than 10 minutes old, as with a reload;
+- one copy is under 30% the length of the other, which usually means a partial load;
+- the page has changed wholesale three visits running, as a feed does, or more than 60% of it changed before twig has seen it three times;
+- you've muted the site.
+
+## Muting a site
+
+Choose **Don't flag changes on** *site* in the panel. Muted sites are listed in **Settings → Data**, where you can unmute them.
+
+Nothing is fetched in the background: changes are only noticed when you open the page yourself.

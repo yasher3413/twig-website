@@ -1,0 +1,50 @@
+---
+title: Getting started
+description: Install twig, open it the first time, take the welcome tour, and make it your default browser.
+---
+
+## What you need
+
+A Mac with Apple silicon (M1 or newer). There's no Intel, Windows or Linux build.
+
+## Install
+
+1. [Download twig](https://github.com/yasher3413/twig/releases/latest/download/twig-macos-arm64.dmg). The link always serves the newest version.
+2. Open the `.dmg` and drag **twig** into **Applications**.
+
+## The first launch
+
+twig isn't notarized by Apple yet, so macOS asks you to confirm the first time you open it. You only do this once.
+
+1. Open twig. macOS says it can't verify the app. Click **Done**.
+2. Open **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the message about twig. Confirm with your password.
+
+After that, twig opens normally. If you'd rather use Terminal, this does the same thing:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/twig.app
+```
+
+<Callout title="Why the extra step?">
+Notarization needs a paid Apple Developer account. Until twig has one, Gatekeeper treats it as an app from an unidentified developer. [Supporting twig](/donate) would pay for it.
+</Callout>
+
+## The welcome tour
+
+The first launch opens a short welcome. Every step is skippable, and nothing in it creates an account or leaves your Mac.
+
+- **A name** for the new tab page to greet you by.
+- **Bookmark import** from Chrome, Arc, Brave, Edge, Vivaldi or Chromium. Safari isn't in the list because its bookmarks need Full Disk Access.
+- **A look**: light, dark or system, and one of six accents (Moss, Clay, Ocean, Plum, Honey, Slate).
+- **How many tabs stay awake**: Frugal 3, Balanced 5 or Roomy 10.
+- **Your shortcuts**, which you can rebind right there.
+
+You can replay it any time from Settings or ⌘K → *Welcome to twig*.
+
+## Make twig your default browser
+
+Open **Settings → Browser** and choose to make twig your default. Links from other apps then open as new tabs in your current space, and sign-in pop-ups work.
+
+## Updating
+
+There's no auto-updater yet. When a new version comes out, download it from the same link and replace the app in Applications. The [release notes](/releases) list what's new, and have an [Atom feed](/releases/feed.xml).

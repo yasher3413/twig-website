@@ -1,0 +1,99 @@
+/* Docs in twig's reading register: Public Sans at a comfortable measure,
+   Young Serif titles, moss links, almanac-ruled tables. */
+.docs-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.docs-wordmark-sub {
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 560;
+  letter-spacing: 0;
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--strip);
+}
+
+.docs-theme {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+#nd-page h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+#nd-page .prose {
+  --tw-prose-body: var(--ink);
+  --tw-prose-headings: var(--ink);
+  --tw-prose-links: var(--moss);
+  --tw-prose-bold: var(--ink);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--moss);
+  --tw-prose-quotes: var(--ink);
+  --tw-prose-code: var(--ink);
+  --tw-prose-th-borders: var(--ink);
+  --tw-prose-td-borders: var(--rule);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+#nd-page .prose h2,
+#nd-page .prose h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+#nd-page .prose h2 {
+  font-size: 30px;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+
+#nd-page .prose h3 {
+  font-size: 22px;
+}
+
+#nd-page .prose a {
+  text-decoration-color: color-mix(in srgb, var(--moss) 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+#nd-page .prose table {
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+}
+
+#nd-page .prose kbd {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.82em;
+  padding: 1px 6px;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface);
+}
+
+#nd-sidebar {
+  background: var(--paper);
+}

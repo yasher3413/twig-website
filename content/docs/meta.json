@@ -1,0 +1,24 @@
+{
+  "title": "twig",
+  "pages": [
+    "index",
+    "getting-started",
+    "---Browsing---",
+    "tabs",
+    "spaces",
+    "command-palette",
+    "reading",
+    "keyboard-shortcuts",
+    "---Remembering---",
+    "recall",
+    "changes",
+    "checkpoints",
+    "snooze",
+    "research-packages",
+    "---Help---",
+    "privacy",
+    "troubleshooting",
+    "reporting-bugs",
+    "building"
+  ]
+}

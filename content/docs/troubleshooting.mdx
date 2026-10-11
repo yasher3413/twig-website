@@ -1,0 +1,45 @@
+---
+title: Troubleshooting
+description: Gatekeeper, the default browser, sites that say twig is unsupported, sign-in pop-ups, and other common snags.
+---
+
+## "twig can't be opened" / "Apple could not verify"
+
+twig isn't notarized yet, so macOS asks you to confirm the first launch:
+
+1. Open twig and click **Done** on the warning.
+2. Go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the message about twig. Confirm with your password.
+
+Or run this in Terminal, once twig is in Applications:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/twig.app
+```
+
+## twig won't run on my Mac
+
+twig needs Apple silicon (M1 or newer). Check under **Apple menu → About This Mac → Chip**. There's no Intel build yet.
+
+## Setting twig as the default browser
+
+Open **Settings → Browser** in twig and make it the default. macOS may ask you to confirm. Links from other apps then open as new tabs in your current space.
+
+## A site says my browser isn't supported
+
+twig tells sites the Safari version your Mac actually has, since it uses the same WebKit engine. If a site still refuses, it's usually checking for a specific browser by name; let us know which site in a [bug report](/docs/reporting-bugs).
+
+## Sign-in pop-ups
+
+Sign-in windows (for "Sign in with…" buttons) open as pop-ups and should work. One known limit: Google's "Sign in with Google" prompt can't show your profile automatically, because WebKit blocks the cross-site tracking cookies it relies on, as Safari does. Signing in itself still works.
+
+## Extensions
+
+twig can't run browser extensions. WebKit's webview has no extension API, so this isn't something an update can add. Content blocking, if it comes, would use WebKit's narrower content rules.
+
+## Updating
+
+There's no auto-updater yet. Download the newest version and replace the app in Applications. Your data is kept.
+
+## Something else
+
+[Report a bug](/docs/reporting-bugs) from inside twig, or open an issue on GitHub.

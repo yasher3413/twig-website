@@ -22,7 +22,9 @@ export const viewport: Viewport = {
 };
 
 // Runs before paint so an explicit theme choice never flashes the other one.
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+// It also mirrors the effective theme as a .dark class, which the docs'
+// code highlighting keys on.
+const themeScript = `(function(){var d=document.documentElement,m=matchMedia("(prefers-color-scheme: dark)");function s(){var t=d.dataset.theme;d.classList.toggle("dark",t?t==="dark":m.matches)}try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.dataset.theme=t}catch(e){}s();m.addEventListener("change",s);window.__twigTheme=s})()`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

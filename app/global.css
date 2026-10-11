@@ -285,6 +285,13 @@
   padding-inline: var(--gutter);
 }
 
+/* Home chapters leave room in the left margin for the branch. */
+@utility branch-room {
+  @media (min-width: 1024px) {
+    padding-left: calc(var(--gutter) + 52px);
+  }
+}
+
 @utility sr-only-focusable {
   position: absolute;
   left: -9999px;

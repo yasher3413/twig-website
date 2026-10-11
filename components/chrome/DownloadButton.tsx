@@ -19,6 +19,7 @@ export function DownloadButton({
       href={DOWNLOAD_URL}
       className={`${styles.download} ${styles[`download-${size}`]} ${styles[`tone-${tone}`]} ${className}`}
       data-download
+      aria-label={`Download twig ${version} for Mac (Apple silicon)`}
     >
       <svg className={styles.downloadLeaf} width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
         <path className={styles.leafClosed} d="M5 20 C 6 15, 9 9.5, 15 6.5 C 13 13, 10 17.5, 5 20 Z" />

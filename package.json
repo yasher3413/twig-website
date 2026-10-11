@@ -8,7 +8,11 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:contrast": "node scripts/contrast.mjs",
+    "check:links": "node scripts/linkcheck.mjs",
+    "check:smoke": "node scripts/smoke.mjs",
+    "shots": "node scripts/matrix.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

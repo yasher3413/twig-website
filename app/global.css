@@ -34,9 +34,9 @@
   --moon: rgba(214, 228, 190, 0.16);
 
   /* Chapter fields: background, text on it, and a strong mark colour. */
-  --f-moss: #4b6b3a;   --on-moss: #f6f4ee;   --mark-moss: #c9e0b4;
-  --f-ocean: #2b6e7a;  --on-ocean: #f6f4ee;  --mark-ocean: #bfe3e8;
-  --f-clay: #8f4a26;   --on-clay: #f6f4ee;   --mark-clay: #f3cdb3;
+  --f-moss: #4b6b3a;   --on-moss: #f6f4ee;   --mark-moss: #dcedce;
+  --f-ocean: #2b6e7a;  --on-ocean: #f6f4ee;  --mark-ocean: #d9f1f3;
+  --f-clay: #8f4a26;   --on-clay: #f6f4ee;   --mark-clay: #f6d8c5;
   --f-honey: #e0b24d;  --on-honey: #23261f;  --mark-honey: #5a4210;
   --f-plum: #6b4a82;   --on-plum: #f6f4ee;   --mark-plum: #e2d0ef;
   --f-slate: #52564c;  --on-slate: #f6f4ee;  --mark-slate: #dfe1d6;
@@ -267,6 +267,8 @@
     font-weight: 400;
     margin: 0;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   p {

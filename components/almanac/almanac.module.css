@@ -104,3 +104,8 @@
 .table a:hover {
   text-decoration-color: currentColor;
 }
+
+.table th,
+.table td {
+  overflow-wrap: anywhere;
+}

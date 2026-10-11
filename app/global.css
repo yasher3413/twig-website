@@ -336,3 +336,9 @@
     z-index: 200;
   }
 }
+
+@media (min-width: 1024px) {
+  .legal-body {
+    margin-left: 212px;
+  }
+}

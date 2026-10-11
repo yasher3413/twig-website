@@ -1,0 +1,74 @@
+.main {
+  position: relative;
+  overflow: clip;
+  min-height: 70vh;
+  padding: clamp(64px, 10vw, 160px) 0;
+}
+
+/* One lost leaf, drifting down the page. */
+.leaf {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  fill: var(--leaf-asleep);
+  animation: drift 9s var(--ease-drift) infinite alternate;
+  transform-origin: 20% 80%;
+}
+
+.vein {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 0.7;
+  opacity: 0.5;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0) rotate(-8deg);
+  }
+  to {
+    transform: translate(-60px, 120px) rotate(22deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf {
+    animation: none;
+  }
+}
+
+.code {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--moss);
+}
+
+.title {
+  max-width: 14ch;
+}
+
+.lede {
+  max-width: 44ch;
+  margin: 20px 0 32px;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.home {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--moss);
+  color: var(--paper);
+  font-weight: 560;
+  text-decoration: none;
+}

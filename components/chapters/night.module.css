@@ -1,0 +1,166 @@
+.night {
+  position: relative;
+  background: var(--forest);
+  overflow: clip;
+}
+
+/* One light source for the whole night passage (spec §3.6). */
+.moon {
+  position: absolute;
+  top: 6%;
+  right: -10%;
+  width: min(900px, 90vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--moon), transparent 62%);
+  pointer-events: none;
+}
+
+.night > section {
+  background: transparent !important;
+}
+
+.macFigure {
+  margin: 0;
+}
+
+.mac {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  overflow: visible;
+}
+
+.macBody {
+  fill: color-mix(in srgb, var(--forest-ink) 10%, transparent);
+  stroke: color-mix(in srgb, var(--forest-ink) 45%, transparent);
+  stroke-width: 1.5;
+}
+
+.macScreen {
+  fill: color-mix(in srgb, var(--forest-ink) 4%, transparent);
+  stroke: color-mix(in srgb, var(--forest-ink) 25%, transparent);
+}
+
+.dot {
+  fill: var(--mark);
+}
+
+.item {
+  font-family: var(--font-text);
+  font-size: 17px;
+  fill: var(--forest-ink);
+}
+
+.out {
+  fill: none;
+  stroke: var(--forest-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+
+.outLabel {
+  font-family: var(--font-text);
+  font-size: 13px;
+  fill: var(--forest-muted);
+}
+
+.list {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  max-width: 560px;
+}
+
+.list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--forest-ink) 16%, transparent);
+  font-size: 15px;
+}
+
+.where {
+  color: var(--forest-muted);
+}
+
+.fact {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 1.8em !important;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--forest-ink) 25%, transparent);
+}
+
+.factNum {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 4.6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--mark);
+  white-space: nowrap;
+}
+
+.factText {
+  font-size: 15px;
+  color: var(--forest-muted);
+}
+
+.factText a {
+  color: var(--forest-ink);
+}
+
+.stack {
+  display: grid;
+  gap: 20px;
+  align-items: end;
+}
+
+@media (min-width: 640px) {
+  .stack {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colTitle {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--forest-ink);
+}
+
+.layer {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--forest-ink) 25%, transparent);
+  color: var(--forest-ink);
+  font-size: 15px;
+}
+
+.heavy {
+  min-height: 150px;
+  align-items: flex-start;
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--forest-ink) 9%, transparent) 0 8px, transparent 8px 16px);
+}
+
+.base {
+  background: color-mix(in srgb, var(--forest-ink) 10%, transparent);
+}
+
+.twig {
+  border-color: var(--mark);
+  color: var(--mark);
+  font-weight: 560;
+}

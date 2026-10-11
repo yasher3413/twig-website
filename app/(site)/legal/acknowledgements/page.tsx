@@ -34,7 +34,7 @@ const SITE = [
 
 export default function AckPage() {
   return (
-    <LegalPage title="Acknowledgements" when="With thanks" draft={false}>
+    <LegalPage title={"Acknowledge\u00adments"} when="With thanks" draft={false}>
       <p>twig and this website stand on a lot of other people&apos;s open-source work. Thank you.</p>
       <h2>The twig app</h2>
       <RuledTable head={["Project", "Used for", "Licence"]} rows={APP} />

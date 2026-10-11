@@ -26,7 +26,13 @@
 }
 
 .title {
-  font-size: clamp(46px, 5.6vw, 96px);
+  font-size: clamp(46px, 5.6vw, 88px);
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  }
 }
 
 .lede {

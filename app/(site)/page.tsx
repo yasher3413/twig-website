@@ -4,6 +4,9 @@ import { Hero } from "@/components/chapters/Hero";
 import { SleepingChapter } from "@/components/chapters/Sleeping";
 import { RecallChapter } from "@/components/chapters/RecallChapter";
 import { ChangesChapter } from "@/components/chapters/ChangesChapter";
+import { SnoozeChapter } from "@/components/chapters/SnoozeChapter";
+import { CheckpointsChapter } from "@/components/chapters/CheckpointsChapter";
+import { PackagesChapter } from "@/components/chapters/PackagesChapter";
 import { getLatest } from "@/lib/github";
 import { pageMeta, baseUrl } from "@/lib/seo";
 import { DOWNLOAD_URL, REPO_URL } from "@/lib/links";
@@ -39,6 +42,9 @@ export default async function Home() {
         <SleepingChapter />
         <RecallChapter />
         <ChangesChapter />
+        <SnoozeChapter />
+        <CheckpointsChapter />
+        <PackagesChapter />
       </BranchProvider>
     </main>
   );

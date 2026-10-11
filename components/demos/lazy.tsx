@@ -28,3 +28,23 @@ export const LazyChanges = () => (
     <ChangesDemo />
   </Near>
 );
+
+const SnoozeDemo = dynamic(() => import("./snooze/SnoozeDemo").then((m) => m.SnoozeDemo), { ssr: false });
+const CheckpointsDemo = dynamic(() => import("./checkpoints/CheckpointsDemo").then((m) => m.CheckpointsDemo), { ssr: false });
+const PackagesDemo = dynamic(() => import("./packages/PackagesDemo").then((m) => m.PackagesDemo), { ssr: false });
+
+export const LazySnooze = () => (
+  <Near minHeight="clamp(540px, 46vw, 640px)" label="Snooze demo loading">
+    <SnoozeDemo />
+  </Near>
+);
+export const LazyCheckpoints = () => (
+  <Near minHeight="620px" label="Checkpoints demo loading">
+    <CheckpointsDemo />
+  </Near>
+);
+export const LazyPackages = () => (
+  <Near minHeight="560px" label="Research packages demo loading">
+    <PackagesDemo />
+  </Near>
+);

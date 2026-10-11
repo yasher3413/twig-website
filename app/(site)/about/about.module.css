@@ -1,0 +1,54 @@
+.principles {
+  display: grid;
+  gap: 28px 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .principles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.principles h3 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.principles p {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--muted);
+}
+
+.maker {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 720px) {
+  .maker {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
+  background: var(--strip);
+  border: 1px solid var(--border);
+}
+
+.more {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+.more a {
+  color: var(--moss);
+}

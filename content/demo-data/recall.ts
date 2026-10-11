@@ -1,0 +1,103 @@
+import type { RecallDoc } from "@/lib/recall-search";
+
+// Invented reading copies, dated September 2026, spread over three spaces.
+export const RECALL_SPACES = ["Home", "Research", "Trip"];
+
+export const RECALL_DOCS: RecallDoc[] = [
+  {
+    id: "r1",
+    title: "How to read a tide table",
+    url: "https://coastalnotes.example/tides/how-to-read",
+    space: "Trip",
+    date: "2026-09-03",
+    text: "Two highs and two lows a day, give or take. The table tells you when, and how far the water will reach. Spring tides arrive near the new and full moon, when the sun and moon pull together. Neap tides fall between them, with smaller ranges and gentler currents. Always add the local correction printed beside the harbour name.",
+  },
+  {
+    id: "r2",
+    title: "Day four: the starter wakes up",
+    url: "https://breadcraft.example/starter/day-4",
+    space: "Home",
+    date: "2026-09-05",
+    text: "By now it should double within six hours of a feed. If it doesn't, keep it somewhere warmer, near the oven but not on it. Feed equal weights of flour and water, and discard half before each feed. A ripe starter smells sweet and a little sharp, like yoghurt, and a spoonful floats in water.",
+  },
+  {
+    id: "r3",
+    title: "Kerning, a field guide",
+    url: "https://typeroom.example/guides/kerning",
+    space: "Research",
+    date: "2026-09-08",
+    text: "Space the letters until the word looks even, not until the gaps measure the same. Round letters need to sit closer than straight ones, because their curves leave more air at the edges. Check pairs like AV, To and ry at the size you will actually use them, and squint: an even grey texture means the spacing is right.",
+  },
+  {
+    id: "r4",
+    title: "Why your chain slips, and how to stop it",
+    url: "https://spokeandgear.example/repairs/chain-slip",
+    space: "Home",
+    date: "2026-09-10",
+    text: "Usually it's a worn chain, a stretched cable or a bent hanger. Check them in that order. A chain checker costs less than a cassette, so replace the chain at half a percent of wear. Turn the barrel adjuster a quarter at a time until every shift lands cleanly, and test under load, not on the stand.",
+  },
+  {
+    id: "r5",
+    title: "The north line, overnight",
+    url: "https://railtrips.example/night/north-line",
+    space: "Trip",
+    date: "2026-09-12",
+    text: "Departs at 21:40 and arrives at 07:15. Couchettes sell out first on Fridays, so book midweek if you can. Change at the border station, where the connection waits for the sleeper. Bring water: the café car closes at midnight, and the first coffee is not until the morning stop.",
+  },
+  {
+    id: "r6",
+    title: "A morning in the moss gardens",
+    url: "https://slowtravel.example/kyoto/moss",
+    space: "Trip",
+    date: "2026-09-14",
+    text: "Over a hundred kinds of moss, raked paths and almost no sound. Go early, before the tours arrive. Visits are by postcard request, sent a month ahead. Wear soft shoes, because the paths are swept every dawn, and the gardeners ask that you stay on the stones after rain.",
+  },
+  {
+    id: "r7",
+    title: "Ownership, borrowing and lifetimes",
+    url: "https://learnsystems.example/book/ownership",
+    space: "Research",
+    date: "2026-09-16",
+    text: "Each value has one owner. When the owner goes out of scope, the value is dropped and its memory is freed. You can have many shared references or one mutable reference, never both at once. The borrow checker enforces this at compile time, so a whole class of memory bugs never reaches the program you ship.",
+  },
+  {
+    id: "r8",
+    title: "Thursday late opening",
+    url: "https://citymuseum.example/visit/late",
+    space: "Home",
+    date: "2026-09-18",
+    text: "Galleries stay open until 22:00, with talks in the print room at 19:00 and 20:30. Entry is free after 18:00. The café serves a short menu until 21:30. This season's prints show woodblock techniques from three centuries, with a working press demonstrated on the hour.",
+  },
+  {
+    id: "r9",
+    title: "Saving seed from your own plants",
+    url: "https://allotment.example/seeds/saving",
+    space: "Home",
+    date: "2026-09-20",
+    text: "Start with beans, peas and tomatoes: they mostly breed true. Let the pods dry on the plant, then shell them on a dry day. Store seed in paper envelopes, labelled and dated, somewhere cool and dark. Most seed keeps for three years; parsnip barely lasts one.",
+  },
+  {
+    id: "r10",
+    title: "Reading a contour map",
+    url: "https://fellwalks.example/skills/contours",
+    space: "Trip",
+    date: "2026-09-22",
+    text: "Lines close together mean a steep slope; lines far apart mean gentle ground. Every fifth contour is drawn thicker and carries its height. Where lines form a V pointing uphill, you are looking at a stream valley. Count the lines between two points to know how much you will climb.",
+  },
+  {
+    id: "r11",
+    title: "Notes on spaced repetition",
+    url: "https://learnsystems.example/notes/spaced-repetition",
+    space: "Research",
+    date: "2026-09-25",
+    text: "Review a card just before you would forget it. Each successful recall pushes the next review further out: a day, three days, a week, a month. Short daily sessions beat long weekly ones. Write cards that ask one thing, in your own words, and delete the ones you keep getting wrong.",
+  },
+  {
+    id: "r12",
+    title: "Pressing flowers without a press",
+    url: "https://allotment.example/craft/pressing",
+    space: "Home",
+    date: "2026-09-28",
+    text: "Lay the flowers face down between sheets of plain paper and close them inside a heavy book. Add more books on top. Change the paper after three days to stop mould. Thin petals dry in a week; thick ones like roses take three, and keep their colour better if picked in the morning.",
+  },
+];
